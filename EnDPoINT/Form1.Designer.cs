@@ -75,6 +75,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelShowPrintHeaders = new System.Windows.Forms.Label();
+            this.labelPrintHeaders = new System.Windows.Forms.Label();
+            this.labelShowLogLevel = new System.Windows.Forms.Label();
+            this.labelLogLevel = new System.Windows.Forms.Label();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageDICOM.SuspendLayout();
@@ -128,6 +132,10 @@
             // 
             // tabPageDICOM
             // 
+            this.tabPageDICOM.Controls.Add(this.labelShowLogLevel);
+            this.tabPageDICOM.Controls.Add(this.labelLogLevel);
+            this.tabPageDICOM.Controls.Add(this.labelShowPrintHeaders);
+            this.tabPageDICOM.Controls.Add(this.labelPrintHeaders);
             this.tabPageDICOM.Controls.Add(this.labelShowPrinter);
             this.tabPageDICOM.Controls.Add(this.labelDisplayPrinter);
             this.tabPageDICOM.Controls.Add(this.labelShowAETitle);
@@ -274,6 +282,7 @@
             this.buttonUpdateDICOM.TabIndex = 0;
             this.buttonUpdateDICOM.Text = "Update";
             this.buttonUpdateDICOM.UseVisualStyleBackColor = true;
+            this.buttonUpdateDICOM.Click += new System.EventHandler(this.buttonUpdateDICOM_Click);
             // 
             // pictureBoxStatus
             // 
@@ -451,6 +460,7 @@
             this.radioButtonLogOff.TabIndex = 3;
             this.radioButtonLogOff.Text = "off";
             this.radioButtonLogOff.UseVisualStyleBackColor = true;
+            this.radioButtonLogOff.CheckedChanged += new System.EventHandler(this.radioButtonLogOff_CheckedChanged);
             // 
             // radioButtonLogMin
             // 
@@ -461,6 +471,7 @@
             this.radioButtonLogMin.TabIndex = 2;
             this.radioButtonLogMin.Text = "minimal";
             this.radioButtonLogMin.UseVisualStyleBackColor = true;
+            this.radioButtonLogMin.CheckedChanged += new System.EventHandler(this.radioButtonLogMin_CheckedChanged);
             // 
             // radioButtonLogStd
             // 
@@ -473,6 +484,7 @@
             this.radioButtonLogStd.TabStop = true;
             this.radioButtonLogStd.Text = "standard";
             this.radioButtonLogStd.UseVisualStyleBackColor = true;
+            this.radioButtonLogStd.CheckedChanged += new System.EventHandler(this.radioButtonLogStd_CheckedChanged);
             // 
             // radioButtonLogVrb
             // 
@@ -483,6 +495,7 @@
             this.radioButtonLogVrb.TabIndex = 0;
             this.radioButtonLogVrb.Text = "verbose";
             this.radioButtonLogVrb.UseVisualStyleBackColor = true;
+            this.radioButtonLogVrb.CheckedChanged += new System.EventHandler(this.radioButtonLogVrb_CheckedChanged);
             // 
             // openFileDialogLogfile
             // 
@@ -531,6 +544,42 @@
             this.aboutEnDPoINTToolStripMenuItem.Name = "aboutEnDPoINTToolStripMenuItem";
             this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
+            // 
+            // labelShowPrintHeaders
+            // 
+            this.labelShowPrintHeaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowPrintHeaders.Location = new System.Drawing.Point(125, 292);
+            this.labelShowPrintHeaders.Name = "labelShowPrintHeaders";
+            this.labelShowPrintHeaders.Size = new System.Drawing.Size(327, 23);
+            this.labelShowPrintHeaders.TabIndex = 12;
+            this.labelShowPrintHeaders.Text = "Yes or No";
+            // 
+            // labelPrintHeaders
+            // 
+            this.labelPrintHeaders.AutoSize = true;
+            this.labelPrintHeaders.Location = new System.Drawing.Point(10, 292);
+            this.labelPrintHeaders.Name = "labelPrintHeaders";
+            this.labelPrintHeaders.Size = new System.Drawing.Size(109, 13);
+            this.labelPrintHeaders.TabIndex = 11;
+            this.labelPrintHeaders.Text = "Print DICOM Headers";
+            // 
+            // labelShowLogLevel
+            // 
+            this.labelShowLogLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowLogLevel.Location = new System.Drawing.Point(125, 320);
+            this.labelShowLogLevel.Name = "labelShowLogLevel";
+            this.labelShowLogLevel.Size = new System.Drawing.Size(327, 23);
+            this.labelShowLogLevel.TabIndex = 14;
+            this.labelShowLogLevel.Text = "standard";
+            // 
+            // labelLogLevel
+            // 
+            this.labelLogLevel.AutoSize = true;
+            this.labelLogLevel.Location = new System.Drawing.Point(10, 320);
+            this.labelLogLevel.Name = "labelLogLevel";
+            this.labelLogLevel.Size = new System.Drawing.Size(54, 13);
+            this.labelLogLevel.TabIndex = 13;
+            this.labelLogLevel.Text = "Log Level";
             // 
             // frmMain
             // 
@@ -620,6 +669,10 @@
         private System.Windows.Forms.Label labelAETitle;
         private System.Windows.Forms.TextBox textBoxAETitle;
         private System.Windows.Forms.Button buttonUpdateDICOM;
+        private System.Windows.Forms.Label labelShowPrintHeaders;
+        private System.Windows.Forms.Label labelPrintHeaders;
+        private System.Windows.Forms.Label labelShowLogLevel;
+        private System.Windows.Forms.Label labelLogLevel;
 
     }
 }

@@ -15,6 +15,7 @@ namespace EnDPoINT
         private String _AETitle;
         private String _printer;
         private bool _printHeader;
+        private int _logLevel;
         
 
         // Get/Set
@@ -48,6 +49,12 @@ namespace EnDPoINT
             set { this._printHeader = value; }
         }
 
+        public int LogLevel
+        {
+            get { return this._logLevel; }
+            set { this._logLevel = value%4; }
+        }
+
         
         /// <summary>
         /// Standard Constructor for default settings
@@ -59,6 +66,7 @@ namespace EnDPoINT
             this._AETitle = "EnDPoINT";
             this._printer = "None";
             this._printHeader = false;
+            this._logLevel = 2;
         }
 
         private IPAddress findNetworkAddress()

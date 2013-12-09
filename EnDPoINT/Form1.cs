@@ -17,9 +17,10 @@ namespace EnDPoINT
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
-
+            this.Icon = Properties.Resources.printer;
+            this.toolStripProgressBarNetworkCommunication.Visible = false;
         }
     }
 }

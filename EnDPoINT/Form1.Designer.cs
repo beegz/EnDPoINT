@@ -73,18 +73,19 @@
             this.tabControlMain.Controls.Add(this.tabPageDICOM);
             this.tabControlMain.Controls.Add(this.tabPagePrint);
             this.tabControlMain.Controls.Add(this.tabPageLog);
-            this.tabControlMain.Location = new System.Drawing.Point(0, 12);
+            this.tabControlMain.Location = new System.Drawing.Point(12, 12);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(624, 404);
+            this.tabControlMain.Size = new System.Drawing.Size(600, 404);
             this.tabControlMain.TabIndex = 1;
             // 
             // tabPageDICOM
             // 
             this.tabPageDICOM.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDICOM.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.tabPageDICOM.Name = "tabPageDICOM";
-            this.tabPageDICOM.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDICOM.Size = new System.Drawing.Size(616, 378);
+            this.tabPageDICOM.Padding = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.tabPageDICOM.Size = new System.Drawing.Size(592, 378);
             this.tabPageDICOM.TabIndex = 0;
             this.tabPageDICOM.Text = "DICOM";
             this.tabPageDICOM.UseVisualStyleBackColor = true;
@@ -123,6 +124,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnDPoINT - Easy Dicom PrINT - v. 0.1 alpha";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);

@@ -45,9 +45,9 @@
             this.labelDisplayIP = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelPort = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxPort = new System.Windows.Forms.TextBox();
             this.labelAETitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAETitle = new System.Windows.Forms.TextBox();
             this.buttonUpdateDICOM = new System.Windows.Forms.Button();
             this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
             this.buttonServer = new System.Windows.Forms.Button();
@@ -223,9 +223,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.labelPort);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxPort);
             this.groupBox1.Controls.Add(this.labelAETitle);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxAETitle);
             this.groupBox1.Controls.Add(this.buttonUpdateDICOM);
             this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
@@ -243,12 +243,12 @@
             this.labelPort.TabIndex = 4;
             this.labelPort.Text = "Port";
             // 
-            // textBox2
+            // textBoxPort
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxPort.Location = new System.Drawing.Point(57, 42);
+            this.textBoxPort.Name = "textBoxPort";
+            this.textBoxPort.Size = new System.Drawing.Size(80, 20);
+            this.textBoxPort.TabIndex = 3;
             // 
             // labelAETitle
             // 
@@ -259,12 +259,12 @@
             this.labelAETitle.TabIndex = 2;
             this.labelAETitle.Text = "AE Title";
             // 
-            // textBox1
+            // textBoxAETitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(514, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBoxAETitle.Location = new System.Drawing.Point(57, 16);
+            this.textBoxAETitle.Name = "textBoxAETitle";
+            this.textBoxAETitle.Size = new System.Drawing.Size(514, 20);
+            this.textBoxAETitle.TabIndex = 1;
             // 
             // buttonUpdateDICOM
             // 
@@ -365,6 +365,7 @@
             this.checkBoxDICOMHeader.TabIndex = 0;
             this.checkBoxDICOMHeader.Text = "include DICOM header information";
             this.checkBoxDICOMHeader.UseVisualStyleBackColor = true;
+            this.checkBoxDICOMHeader.CheckedChanged += new System.EventHandler(this.checkBoxDICOMHeader_CheckedChanged);
             // 
             // comboBoxPrinters
             // 
@@ -375,6 +376,7 @@
             this.comboBoxPrinters.Size = new System.Drawing.Size(580, 21);
             this.comboBoxPrinters.Sorted = true;
             this.comboBoxPrinters.TabIndex = 0;
+            this.comboBoxPrinters.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinters_SelectedIndexChanged);
             // 
             // tabPageLog
             // 
@@ -614,9 +616,9 @@
         private System.Windows.Forms.Label labelDisplayIP;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelPort;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxPort;
         private System.Windows.Forms.Label labelAETitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAETitle;
         private System.Windows.Forms.Button buttonUpdateDICOM;
 
     }

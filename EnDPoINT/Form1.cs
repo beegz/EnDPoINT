@@ -66,19 +66,38 @@ namespace EnDPoINT
                     this.buttonServer.Text = "Stop EnDPoINT Server";
                     this.toolStripStatusLabelServer.Text = "Server started...";
                 }
-                else
+            else
                 {
                     this.pictureBoxStatus.Image = Properties.Resources.network_off;
                     this.buttonServer.Text = "Start EnDPoINT Server";
                     this.toolStripStatusLabelServer.Text = "Server stopped...";
                 }
+
             //settings
-            //this.labelShowIP = this.serverSettings
+            this.textBoxAETitle.Text = this.serverSettings.AETitle;
+            this.textBoxPort.Text = this.serverSettings.serverPort.ToString();
+            this.labelShowIP.Text = this.serverSettings.serverIP.ToString();
+            this.labelShowPort.Text = this.serverSettings.serverPort.ToString();
+            this.labelShowAETitle.Text = this.serverSettings.AETitle;
+            this.labelShowPrinter.Text = this.serverSettings.Printer;
+            this.checkBoxDICOMHeader.Checked = this.serverSettings.PrintHeader;
         }
 
         private void buttonServer_Click(object sender, EventArgs e)
         {
             switchStatus();
+        }
+
+        private void comboBoxPrinters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.serverSettings.Printer = this.comboBoxPrinters.SelectedItem.ToString();
+            this.updateVisuals();
+        }
+
+        private void checkBoxDICOMHeader_CheckedChanged(object sender, EventArgs e)
+        {
+            this.serverSettings.PrintHeader = this.checkBoxDICOMHeader.Checked;
+            this.updateVisuals();
         }
     }
 }

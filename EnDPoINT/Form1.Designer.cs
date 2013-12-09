@@ -66,6 +66,7 @@
             this.statusStripMain.Location = new System.Drawing.Point(0, 419);
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.Size = new System.Drawing.Size(624, 22);
+            this.statusStripMain.SizingGrip = false;
             this.statusStripMain.TabIndex = 0;
             this.statusStripMain.Text = "statusStrip1";
             // 

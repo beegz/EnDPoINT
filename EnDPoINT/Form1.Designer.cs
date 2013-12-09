@@ -42,6 +42,11 @@
             this.radioButtonLogStd = new System.Windows.Forms.RadioButton();
             this.radioButtonLogMin = new System.Windows.Forms.RadioButton();
             this.radioButtonLogOff = new System.Windows.Forms.RadioButton();
+            this.buttonSetLogfile = new System.Windows.Forms.Button();
+            this.labelLog = new System.Windows.Forms.Label();
+            this.openFileDialogLogfile = new System.Windows.Forms.OpenFileDialog();
+            this.textBoxLogfile = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageLog.SuspendLayout();
@@ -109,6 +114,10 @@
             // 
             // tabPageLog
             // 
+            this.tabPageLog.Controls.Add(this.richTextBox1);
+            this.tabPageLog.Controls.Add(this.textBoxLogfile);
+            this.tabPageLog.Controls.Add(this.labelLog);
+            this.tabPageLog.Controls.Add(this.buttonSetLogfile);
             this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
             this.tabPageLog.Location = new System.Drawing.Point(4, 22);
             this.tabPageLog.Name = "tabPageLog";
@@ -133,18 +142,18 @@
             // radioButtonLogVrb
             // 
             this.radioButtonLogVrb.AutoSize = true;
-            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 20);
+            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 23);
             this.radioButtonLogVrb.Name = "radioButtonLogVrb";
             this.radioButtonLogVrb.Size = new System.Drawing.Size(63, 17);
             this.radioButtonLogVrb.TabIndex = 0;
-            this.radioButtonLogVrb.TabStop = true;
             this.radioButtonLogVrb.Text = "verbose";
             this.radioButtonLogVrb.UseVisualStyleBackColor = true;
             // 
             // radioButtonLogStd
             // 
             this.radioButtonLogStd.AutoSize = true;
-            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 20);
+            this.radioButtonLogStd.Checked = true;
+            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 23);
             this.radioButtonLogStd.Name = "radioButtonLogStd";
             this.radioButtonLogStd.Size = new System.Drawing.Size(66, 17);
             this.radioButtonLogStd.TabIndex = 1;
@@ -155,24 +164,68 @@
             // radioButtonLogMin
             // 
             this.radioButtonLogMin.AutoSize = true;
-            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 20);
+            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 23);
             this.radioButtonLogMin.Name = "radioButtonLogMin";
             this.radioButtonLogMin.Size = new System.Drawing.Size(59, 17);
             this.radioButtonLogMin.TabIndex = 2;
-            this.radioButtonLogMin.TabStop = true;
             this.radioButtonLogMin.Text = "minimal";
             this.radioButtonLogMin.UseVisualStyleBackColor = true;
             // 
             // radioButtonLogOff
             // 
             this.radioButtonLogOff.AutoSize = true;
-            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 20);
+            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 23);
             this.radioButtonLogOff.Name = "radioButtonLogOff";
             this.radioButtonLogOff.Size = new System.Drawing.Size(37, 17);
             this.radioButtonLogOff.TabIndex = 3;
-            this.radioButtonLogOff.TabStop = true;
             this.radioButtonLogOff.Text = "off";
             this.radioButtonLogOff.UseVisualStyleBackColor = true;
+            // 
+            // buttonSetLogfile
+            // 
+            this.buttonSetLogfile.Location = new System.Drawing.Point(467, 63);
+            this.buttonSetLogfile.Name = "buttonSetLogfile";
+            this.buttonSetLogfile.Size = new System.Drawing.Size(122, 23);
+            this.buttonSetLogfile.TabIndex = 1;
+            this.buttonSetLogfile.Text = "Open Logfile...";
+            this.buttonSetLogfile.UseVisualStyleBackColor = true;
+            this.buttonSetLogfile.Click += new System.EventHandler(this.buttonSetLogfile_Click);
+            // 
+            // labelLog
+            // 
+            this.labelLog.AutoSize = true;
+            this.labelLog.Location = new System.Drawing.Point(4, 68);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(41, 13);
+            this.labelLog.TabIndex = 3;
+            this.labelLog.Text = "Logfile:";
+            this.labelLog.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // openFileDialogLogfile
+            // 
+            this.openFileDialogLogfile.CheckFileExists = false;
+            this.openFileDialogLogfile.DefaultExt = "log";
+            this.openFileDialogLogfile.FileName = "EnDPoINT";
+            this.openFileDialogLogfile.Filter = "Logfiles|*.log|All Files|*.*";
+            this.openFileDialogLogfile.InitialDirectory = "C:\\";
+            // 
+            // textBoxLogfile
+            // 
+            this.textBoxLogfile.Enabled = false;
+            this.textBoxLogfile.Location = new System.Drawing.Point(51, 65);
+            this.textBoxLogfile.Name = "textBoxLogfile";
+            this.textBoxLogfile.Size = new System.Drawing.Size(410, 20);
+            this.textBoxLogfile.TabIndex = 4;
+            this.textBoxLogfile.Text = "C:\\EnDPoINT_log.log";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 91);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(589, 284);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
             // 
             // frmMain
             // 
@@ -194,6 +247,7 @@
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
             this.tabPageLog.ResumeLayout(false);
+            this.tabPageLog.PerformLayout();
             this.groupBoxLogLevel.ResumeLayout(false);
             this.groupBoxLogLevel.PerformLayout();
             this.ResumeLayout(false);
@@ -216,6 +270,11 @@
         private System.Windows.Forms.RadioButton radioButtonLogMin;
         private System.Windows.Forms.RadioButton radioButtonLogStd;
         private System.Windows.Forms.RadioButton radioButtonLogVrb;
+        private System.Windows.Forms.TextBox textBoxLogfile;
+        private System.Windows.Forms.Label labelLog;
+        private System.Windows.Forms.Button buttonSetLogfile;
+        private System.Windows.Forms.OpenFileDialog openFileDialogLogfile;
+        private System.Windows.Forms.RichTextBox richTextBox1;
 
     }
 }

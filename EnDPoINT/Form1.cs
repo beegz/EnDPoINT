@@ -13,6 +13,9 @@ namespace EnDPoINT
 {
     public partial class frmMain : Form
     {
+        //global vars
+        bool globalStatus;
+
         public frmMain()
         {
             InitializeComponent();
@@ -20,7 +23,10 @@ namespace EnDPoINT
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.globalStatus = false;
+
             //set startout visuals
+
             this.Icon = Properties.Resources.printer;
             this.toolStripProgressBarNetworkCommunication.Visible = false;
 
@@ -29,16 +35,6 @@ namespace EnDPoINT
             {
                 this.comboBoxPrinters.Items.Add(s);
             }
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonSetLogfile_Click(object sender, EventArgs e)
@@ -51,9 +47,26 @@ namespace EnDPoINT
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void switchStatus()
         {
+            globalStatus = !globalStatus;
+            if (globalStatus)
+            {
+                this.pictureBoxStatus.Image = Properties.Resources.nework_on;
+                this.buttonServer.Text = "Stop EnDPoINT Server";
+                this.toolStripStatusLabelServer.Text = "Server started...";
+            }
+            else
+            {
+                this.pictureBoxStatus.Image = Properties.Resources.network_off;
+                this.buttonServer.Text = "Start EnDPoINT Server";
+                this.toolStripStatusLabelServer.Text = "Server stopped...";
+            }
+        }
 
+        private void buttonServer_Click(object sender, EventArgs e)
+        {
+            switchStatus();
         }
     }
 }

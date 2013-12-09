@@ -35,39 +35,56 @@
             this.toolStripProgressBarNetworkCommunication = new System.Windows.Forms.ToolStripProgressBar();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageDICOM = new System.Windows.Forms.TabPage();
+            this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
+            this.buttonServer = new System.Windows.Forms.Button();
             this.tabPagePrint = new System.Windows.Forms.TabPage();
-            this.tabPageLog = new System.Windows.Forms.TabPage();
-            this.groupBoxLogLevel = new System.Windows.Forms.GroupBox();
-            this.radioButtonLogVrb = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogStd = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogMin = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogOff = new System.Windows.Forms.RadioButton();
-            this.buttonSetLogfile = new System.Windows.Forms.Button();
-            this.labelLog = new System.Windows.Forms.Label();
-            this.openFileDialogLogfile = new System.Windows.Forms.OpenFileDialog();
-            this.textBoxLogfile = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBoxPrinters = new System.Windows.Forms.ComboBox();
-            this.menuStripMain = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonPageDown = new System.Windows.Forms.Button();
+            this.comboBoxPrintPreviewZoom = new System.Windows.Forms.ComboBox();
+            this.buttonPageUp = new System.Windows.Forms.Button();
+            this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
             this.groupBoxPrint = new System.Windows.Forms.GroupBox();
             this.checkBoxDICOMHeader = new System.Windows.Forms.CheckBox();
-            this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
-            this.buttonPageUp = new System.Windows.Forms.Button();
-            this.comboBoxPrintPreviewZoom = new System.Windows.Forms.ComboBox();
-            this.buttonPageDown = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxPrinters = new System.Windows.Forms.ComboBox();
+            this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBoxLogfile = new System.Windows.Forms.TextBox();
+            this.labelLog = new System.Windows.Forms.Label();
+            this.buttonSetLogfile = new System.Windows.Forms.Button();
+            this.groupBoxLogLevel = new System.Windows.Forms.GroupBox();
+            this.radioButtonLogOff = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogMin = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogStd = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogVrb = new System.Windows.Forms.RadioButton();
+            this.openFileDialogLogfile = new System.Windows.Forms.OpenFileDialog();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonUpdateDICOM = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelAETitle = new System.Windows.Forms.Label();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelDisplayIP = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelDisplayPort = new System.Windows.Forms.Label();
+            this.labelDisplayAETitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelDisplayPrinter = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageDICOM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).BeginInit();
             this.tabPagePrint.SuspendLayout();
+            this.groupBoxPrint.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.groupBoxLogLevel.SuspendLayout();
             this.menuStripMain.SuspendLayout();
-            this.groupBoxPrint.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -111,7 +128,17 @@
             // 
             // tabPageDICOM
             // 
-            this.tabPageDICOM.Controls.Add(this.button1);
+            this.tabPageDICOM.Controls.Add(this.label4);
+            this.tabPageDICOM.Controls.Add(this.labelDisplayPrinter);
+            this.tabPageDICOM.Controls.Add(this.label3);
+            this.tabPageDICOM.Controls.Add(this.label1);
+            this.tabPageDICOM.Controls.Add(this.labelDisplayAETitle);
+            this.tabPageDICOM.Controls.Add(this.labelDisplayPort);
+            this.tabPageDICOM.Controls.Add(this.label2);
+            this.tabPageDICOM.Controls.Add(this.labelDisplayIP);
+            this.tabPageDICOM.Controls.Add(this.groupBox1);
+            this.tabPageDICOM.Controls.Add(this.pictureBoxStatus);
+            this.tabPageDICOM.Controls.Add(this.buttonServer);
             this.tabPageDICOM.Location = new System.Drawing.Point(4, 22);
             this.tabPageDICOM.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.tabPageDICOM.Name = "tabPageDICOM";
@@ -120,6 +147,26 @@
             this.tabPageDICOM.TabIndex = 0;
             this.tabPageDICOM.Text = "DICOM";
             this.tabPageDICOM.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxStatus
+            // 
+            this.pictureBoxStatus.Image = global::EnDPoINT.Properties.Resources.network_off;
+            this.pictureBoxStatus.InitialImage = global::EnDPoINT.Properties.Resources.network_off;
+            this.pictureBoxStatus.Location = new System.Drawing.Point(458, 196);
+            this.pictureBoxStatus.Name = "pictureBoxStatus";
+            this.pictureBoxStatus.Size = new System.Drawing.Size(128, 128);
+            this.pictureBoxStatus.TabIndex = 1;
+            this.pictureBoxStatus.TabStop = false;
+            // 
+            // buttonServer
+            // 
+            this.buttonServer.Location = new System.Drawing.Point(458, 330);
+            this.buttonServer.Name = "buttonServer";
+            this.buttonServer.Size = new System.Drawing.Size(128, 23);
+            this.buttonServer.TabIndex = 0;
+            this.buttonServer.Text = "Start EnDPoINT Server";
+            this.buttonServer.UseVisualStyleBackColor = true;
+            this.buttonServer.Click += new System.EventHandler(this.buttonServer_Click);
             // 
             // tabPagePrint
             // 
@@ -137,170 +184,40 @@
             this.tabPagePrint.Text = "Printer";
             this.tabPagePrint.UseVisualStyleBackColor = true;
             // 
-            // tabPageLog
+            // buttonPageDown
             // 
-            this.tabPageLog.Controls.Add(this.richTextBox1);
-            this.tabPageLog.Controls.Add(this.textBoxLogfile);
-            this.tabPageLog.Controls.Add(this.labelLog);
-            this.tabPageLog.Controls.Add(this.buttonSetLogfile);
-            this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
-            this.tabPageLog.Location = new System.Drawing.Point(4, 22);
-            this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Size = new System.Drawing.Size(592, 359);
-            this.tabPageLog.TabIndex = 2;
-            this.tabPageLog.Text = "Logging";
-            this.tabPageLog.UseVisualStyleBackColor = true;
+            this.buttonPageDown.Location = new System.Drawing.Point(301, 326);
+            this.buttonPageDown.Name = "buttonPageDown";
+            this.buttonPageDown.Size = new System.Drawing.Size(75, 23);
+            this.buttonPageDown.TabIndex = 6;
+            this.buttonPageDown.Text = "<<";
+            this.buttonPageDown.UseVisualStyleBackColor = true;
             // 
-            // groupBoxLogLevel
+            // comboBoxPrintPreviewZoom
             // 
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogOff);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogMin);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogStd);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogVrb);
-            this.groupBoxLogLevel.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxLogLevel.Name = "groupBoxLogLevel";
-            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 54);
-            this.groupBoxLogLevel.TabIndex = 0;
-            this.groupBoxLogLevel.TabStop = false;
-            this.groupBoxLogLevel.Text = "Log Level";
+            this.comboBoxPrintPreviewZoom.FormattingEnabled = true;
+            this.comboBoxPrintPreviewZoom.Location = new System.Drawing.Point(383, 328);
+            this.comboBoxPrintPreviewZoom.MaxLength = 4;
+            this.comboBoxPrintPreviewZoom.Name = "comboBoxPrintPreviewZoom";
+            this.comboBoxPrintPreviewZoom.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPrintPreviewZoom.TabIndex = 5;
+            this.comboBoxPrintPreviewZoom.Text = "30%";
             // 
-            // radioButtonLogVrb
+            // buttonPageUp
             // 
-            this.radioButtonLogVrb.AutoSize = true;
-            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 23);
-            this.radioButtonLogVrb.Name = "radioButtonLogVrb";
-            this.radioButtonLogVrb.Size = new System.Drawing.Size(63, 17);
-            this.radioButtonLogVrb.TabIndex = 0;
-            this.radioButtonLogVrb.Text = "verbose";
-            this.radioButtonLogVrb.UseVisualStyleBackColor = true;
+            this.buttonPageUp.Location = new System.Drawing.Point(510, 326);
+            this.buttonPageUp.Name = "buttonPageUp";
+            this.buttonPageUp.Size = new System.Drawing.Size(75, 23);
+            this.buttonPageUp.TabIndex = 3;
+            this.buttonPageUp.Text = ">>";
+            this.buttonPageUp.UseVisualStyleBackColor = true;
             // 
-            // radioButtonLogStd
+            // printPreviewControl
             // 
-            this.radioButtonLogStd.AutoSize = true;
-            this.radioButtonLogStd.Checked = true;
-            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 23);
-            this.radioButtonLogStd.Name = "radioButtonLogStd";
-            this.radioButtonLogStd.Size = new System.Drawing.Size(66, 17);
-            this.radioButtonLogStd.TabIndex = 1;
-            this.radioButtonLogStd.TabStop = true;
-            this.radioButtonLogStd.Text = "standard";
-            this.radioButtonLogStd.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonLogMin
-            // 
-            this.radioButtonLogMin.AutoSize = true;
-            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 23);
-            this.radioButtonLogMin.Name = "radioButtonLogMin";
-            this.radioButtonLogMin.Size = new System.Drawing.Size(59, 17);
-            this.radioButtonLogMin.TabIndex = 2;
-            this.radioButtonLogMin.Text = "minimal";
-            this.radioButtonLogMin.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonLogOff
-            // 
-            this.radioButtonLogOff.AutoSize = true;
-            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 23);
-            this.radioButtonLogOff.Name = "radioButtonLogOff";
-            this.radioButtonLogOff.Size = new System.Drawing.Size(37, 17);
-            this.radioButtonLogOff.TabIndex = 3;
-            this.radioButtonLogOff.Text = "off";
-            this.radioButtonLogOff.UseVisualStyleBackColor = true;
-            // 
-            // buttonSetLogfile
-            // 
-            this.buttonSetLogfile.Location = new System.Drawing.Point(467, 63);
-            this.buttonSetLogfile.Name = "buttonSetLogfile";
-            this.buttonSetLogfile.Size = new System.Drawing.Size(122, 23);
-            this.buttonSetLogfile.TabIndex = 1;
-            this.buttonSetLogfile.Text = "Open Logfile...";
-            this.buttonSetLogfile.UseVisualStyleBackColor = true;
-            this.buttonSetLogfile.Click += new System.EventHandler(this.buttonSetLogfile_Click);
-            // 
-            // labelLog
-            // 
-            this.labelLog.AutoSize = true;
-            this.labelLog.Location = new System.Drawing.Point(4, 68);
-            this.labelLog.Name = "labelLog";
-            this.labelLog.Size = new System.Drawing.Size(41, 13);
-            this.labelLog.TabIndex = 3;
-            this.labelLog.Text = "Logfile:";
-            this.labelLog.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // openFileDialogLogfile
-            // 
-            this.openFileDialogLogfile.CheckFileExists = false;
-            this.openFileDialogLogfile.DefaultExt = "log";
-            this.openFileDialogLogfile.FileName = "EnDPoINT";
-            this.openFileDialogLogfile.Filter = "Logfiles|*.log|All Files|*.*";
-            this.openFileDialogLogfile.InitialDirectory = "C:\\";
-            // 
-            // textBoxLogfile
-            // 
-            this.textBoxLogfile.Enabled = false;
-            this.textBoxLogfile.Location = new System.Drawing.Point(51, 65);
-            this.textBoxLogfile.Name = "textBoxLogfile";
-            this.textBoxLogfile.Size = new System.Drawing.Size(410, 20);
-            this.textBoxLogfile.TabIndex = 4;
-            this.textBoxLogfile.Text = "C:\\EnDPoINT_log.log";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 91);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(589, 284);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
-            // 
-            // comboBoxPrinters
-            // 
-            this.comboBoxPrinters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPrinters.FormattingEnabled = true;
-            this.comboBoxPrinters.Location = new System.Drawing.Point(6, 6);
-            this.comboBoxPrinters.Name = "comboBoxPrinters";
-            this.comboBoxPrinters.Size = new System.Drawing.Size(580, 21);
-            this.comboBoxPrinters.Sorted = true;
-            this.comboBoxPrinters.TabIndex = 0;
-            // 
-            // menuStripMain
-            // 
-            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
-            this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(624, 24);
-            this.menuStripMain.TabIndex = 2;
-            this.menuStripMain.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutEnDPoINTToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // aboutEnDPoINTToolStripMenuItem
-            // 
-            this.aboutEnDPoINTToolStripMenuItem.Name = "aboutEnDPoINTToolStripMenuItem";
-            this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.printPreviewControl.Location = new System.Drawing.Point(301, 33);
+            this.printPreviewControl.Name = "printPreviewControl";
+            this.printPreviewControl.Size = new System.Drawing.Size(285, 287);
+            this.printPreviewControl.TabIndex = 2;
             // 
             // groupBoxPrint
             // 
@@ -322,49 +239,296 @@
             this.checkBoxDICOMHeader.Text = "include DICOM header information";
             this.checkBoxDICOMHeader.UseVisualStyleBackColor = true;
             // 
-            // printPreviewControl
+            // comboBoxPrinters
             // 
-            this.printPreviewControl.Location = new System.Drawing.Point(301, 33);
-            this.printPreviewControl.Name = "printPreviewControl";
-            this.printPreviewControl.Size = new System.Drawing.Size(285, 287);
-            this.printPreviewControl.TabIndex = 2;
+            this.comboBoxPrinters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPrinters.FormattingEnabled = true;
+            this.comboBoxPrinters.Location = new System.Drawing.Point(6, 6);
+            this.comboBoxPrinters.Name = "comboBoxPrinters";
+            this.comboBoxPrinters.Size = new System.Drawing.Size(580, 21);
+            this.comboBoxPrinters.Sorted = true;
+            this.comboBoxPrinters.TabIndex = 0;
             // 
-            // buttonPageUp
+            // tabPageLog
             // 
-            this.buttonPageUp.Location = new System.Drawing.Point(510, 326);
-            this.buttonPageUp.Name = "buttonPageUp";
-            this.buttonPageUp.Size = new System.Drawing.Size(75, 23);
-            this.buttonPageUp.TabIndex = 3;
-            this.buttonPageUp.Text = ">>";
-            this.buttonPageUp.UseVisualStyleBackColor = true;
+            this.tabPageLog.Controls.Add(this.richTextBox1);
+            this.tabPageLog.Controls.Add(this.textBoxLogfile);
+            this.tabPageLog.Controls.Add(this.labelLog);
+            this.tabPageLog.Controls.Add(this.buttonSetLogfile);
+            this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
+            this.tabPageLog.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLog.Name = "tabPageLog";
+            this.tabPageLog.Size = new System.Drawing.Size(592, 359);
+            this.tabPageLog.TabIndex = 2;
+            this.tabPageLog.Text = "Logging";
+            this.tabPageLog.UseVisualStyleBackColor = true;
             // 
-            // comboBoxPrintPreviewZoom
+            // richTextBox1
             // 
-            this.comboBoxPrintPreviewZoom.FormattingEnabled = true;
-            this.comboBoxPrintPreviewZoom.Location = new System.Drawing.Point(383, 328);
-            this.comboBoxPrintPreviewZoom.MaxLength = 4;
-            this.comboBoxPrintPreviewZoom.Name = "comboBoxPrintPreviewZoom";
-            this.comboBoxPrintPreviewZoom.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPrintPreviewZoom.TabIndex = 5;
-            this.comboBoxPrintPreviewZoom.Text = "30%";
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 91);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(589, 284);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
             // 
-            // buttonPageDown
+            // textBoxLogfile
             // 
-            this.buttonPageDown.Location = new System.Drawing.Point(301, 326);
-            this.buttonPageDown.Name = "buttonPageDown";
-            this.buttonPageDown.Size = new System.Drawing.Size(75, 23);
-            this.buttonPageDown.TabIndex = 6;
-            this.buttonPageDown.Text = "<<";
-            this.buttonPageDown.UseVisualStyleBackColor = true;
+            this.textBoxLogfile.Enabled = false;
+            this.textBoxLogfile.Location = new System.Drawing.Point(51, 65);
+            this.textBoxLogfile.Name = "textBoxLogfile";
+            this.textBoxLogfile.Size = new System.Drawing.Size(410, 20);
+            this.textBoxLogfile.TabIndex = 4;
+            this.textBoxLogfile.Text = "C:\\EnDPoINT_log.log";
             // 
-            // button1
+            // labelLog
             // 
-            this.button1.Location = new System.Drawing.Point(511, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.labelLog.AutoSize = true;
+            this.labelLog.Location = new System.Drawing.Point(4, 68);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(41, 13);
+            this.labelLog.TabIndex = 3;
+            this.labelLog.Text = "Logfile:";
+            // 
+            // buttonSetLogfile
+            // 
+            this.buttonSetLogfile.Location = new System.Drawing.Point(467, 63);
+            this.buttonSetLogfile.Name = "buttonSetLogfile";
+            this.buttonSetLogfile.Size = new System.Drawing.Size(122, 23);
+            this.buttonSetLogfile.TabIndex = 1;
+            this.buttonSetLogfile.Text = "Open Logfile...";
+            this.buttonSetLogfile.UseVisualStyleBackColor = true;
+            this.buttonSetLogfile.Click += new System.EventHandler(this.buttonSetLogfile_Click);
+            // 
+            // groupBoxLogLevel
+            // 
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogOff);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogMin);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogStd);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogVrb);
+            this.groupBoxLogLevel.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxLogLevel.Name = "groupBoxLogLevel";
+            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 54);
+            this.groupBoxLogLevel.TabIndex = 0;
+            this.groupBoxLogLevel.TabStop = false;
+            this.groupBoxLogLevel.Text = "Log Level";
+            // 
+            // radioButtonLogOff
+            // 
+            this.radioButtonLogOff.AutoSize = true;
+            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 23);
+            this.radioButtonLogOff.Name = "radioButtonLogOff";
+            this.radioButtonLogOff.Size = new System.Drawing.Size(37, 17);
+            this.radioButtonLogOff.TabIndex = 3;
+            this.radioButtonLogOff.Text = "off";
+            this.radioButtonLogOff.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogMin
+            // 
+            this.radioButtonLogMin.AutoSize = true;
+            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 23);
+            this.radioButtonLogMin.Name = "radioButtonLogMin";
+            this.radioButtonLogMin.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonLogMin.TabIndex = 2;
+            this.radioButtonLogMin.Text = "minimal";
+            this.radioButtonLogMin.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogStd
+            // 
+            this.radioButtonLogStd.AutoSize = true;
+            this.radioButtonLogStd.Checked = true;
+            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 23);
+            this.radioButtonLogStd.Name = "radioButtonLogStd";
+            this.radioButtonLogStd.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonLogStd.TabIndex = 1;
+            this.radioButtonLogStd.TabStop = true;
+            this.radioButtonLogStd.Text = "standard";
+            this.radioButtonLogStd.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogVrb
+            // 
+            this.radioButtonLogVrb.AutoSize = true;
+            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 23);
+            this.radioButtonLogVrb.Name = "radioButtonLogVrb";
+            this.radioButtonLogVrb.Size = new System.Drawing.Size(63, 17);
+            this.radioButtonLogVrb.TabIndex = 0;
+            this.radioButtonLogVrb.Text = "verbose";
+            this.radioButtonLogVrb.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialogLogfile
+            // 
+            this.openFileDialogLogfile.CheckFileExists = false;
+            this.openFileDialogLogfile.DefaultExt = "log";
+            this.openFileDialogLogfile.FileName = "EnDPoINT";
+            this.openFileDialogLogfile.Filter = "Logfiles|*.log|All Files|*.*";
+            this.openFileDialogLogfile.InitialDirectory = "C:\\";
+            // 
+            // menuStripMain
+            // 
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(624, 24);
+            this.menuStripMain.TabIndex = 2;
+            this.menuStripMain.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutEnDPoINTToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutEnDPoINTToolStripMenuItem
+            // 
+            this.aboutEnDPoINTToolStripMenuItem.Name = "aboutEnDPoINTToolStripMenuItem";
+            this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelPort);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.labelAETitle);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.buttonUpdateDICOM);
+            this.groupBox1.Location = new System.Drawing.Point(9, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(577, 184);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "DICOM Settings";
+            // 
+            // buttonUpdateDICOM
+            // 
+            this.buttonUpdateDICOM.Location = new System.Drawing.Point(496, 155);
+            this.buttonUpdateDICOM.Name = "buttonUpdateDICOM";
+            this.buttonUpdateDICOM.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateDICOM.TabIndex = 0;
+            this.buttonUpdateDICOM.Text = "Update";
+            this.buttonUpdateDICOM.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(57, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(514, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // labelAETitle
+            // 
+            this.labelAETitle.AutoSize = true;
+            this.labelAETitle.Location = new System.Drawing.Point(7, 19);
+            this.labelAETitle.Name = "labelAETitle";
+            this.labelAETitle.Size = new System.Drawing.Size(44, 13);
+            this.labelAETitle.TabIndex = 2;
+            this.labelAETitle.Text = "AE Title";
+            // 
+            // labelPort
+            // 
+            this.labelPort.AutoSize = true;
+            this.labelPort.Location = new System.Drawing.Point(7, 45);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(26, 13);
+            this.labelPort.TabIndex = 4;
+            this.labelPort.Text = "Port";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(57, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(80, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // labelDisplayIP
+            // 
+            this.labelDisplayIP.AutoSize = true;
+            this.labelDisplayIP.Location = new System.Drawing.Point(10, 197);
+            this.labelDisplayIP.Name = "labelDisplayIP";
+            this.labelDisplayIP.Size = new System.Drawing.Size(17, 13);
+            this.labelDisplayIP.TabIndex = 3;
+            this.labelDisplayIP.Text = "IP";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(63, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(389, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
+            // labelDisplayPort
+            // 
+            this.labelDisplayPort.AutoSize = true;
+            this.labelDisplayPort.Location = new System.Drawing.Point(10, 219);
+            this.labelDisplayPort.Name = "labelDisplayPort";
+            this.labelDisplayPort.Size = new System.Drawing.Size(26, 13);
+            this.labelDisplayPort.TabIndex = 5;
+            this.labelDisplayPort.Text = "Port";
+            // 
+            // labelDisplayAETitle
+            // 
+            this.labelDisplayAETitle.AutoSize = true;
+            this.labelDisplayAETitle.Location = new System.Drawing.Point(10, 243);
+            this.labelDisplayAETitle.Name = "labelDisplayAETitle";
+            this.labelDisplayAETitle.Size = new System.Drawing.Size(44, 13);
+            this.labelDisplayAETitle.TabIndex = 6;
+            this.labelDisplayAETitle.Text = "AE Title";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(63, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(63, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(389, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "label3";
+            // 
+            // labelDisplayPrinter
+            // 
+            this.labelDisplayPrinter.AutoSize = true;
+            this.labelDisplayPrinter.Location = new System.Drawing.Point(10, 269);
+            this.labelDisplayPrinter.Name = "labelDisplayPrinter";
+            this.labelDisplayPrinter.Size = new System.Drawing.Size(37, 13);
+            this.labelDisplayPrinter.TabIndex = 9;
+            this.labelDisplayPrinter.Text = "Printer";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(63, 269);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(389, 23);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
             // 
             // frmMain
             // 
@@ -388,15 +552,19 @@
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
             this.tabPageDICOM.ResumeLayout(false);
+            this.tabPageDICOM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).EndInit();
             this.tabPagePrint.ResumeLayout(false);
+            this.groupBoxPrint.ResumeLayout(false);
+            this.groupBoxPrint.PerformLayout();
             this.tabPageLog.ResumeLayout(false);
             this.tabPageLog.PerformLayout();
             this.groupBoxLogLevel.ResumeLayout(false);
             this.groupBoxLogLevel.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
-            this.groupBoxPrint.ResumeLayout(false);
-            this.groupBoxPrint.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,7 +602,22 @@
         private System.Windows.Forms.Button buttonPageUp;
         private System.Windows.Forms.PrintPreviewControl printPreviewControl;
         private System.Windows.Forms.Button buttonPageDown;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonServer;
+        private System.Windows.Forms.PictureBox pictureBoxStatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelDisplayPrinter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDisplayAETitle;
+        private System.Windows.Forms.Label labelDisplayPort;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelDisplayIP;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelAETitle;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonUpdateDICOM;
 
     }
 }

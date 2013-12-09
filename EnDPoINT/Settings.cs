@@ -15,8 +15,6 @@ namespace EnDPoINT
         private String _AETitle;
         private String _printer;
         private bool _printHeader;
-        private int _logLevel;
-        
 
         // Get/Set
         public IPAddress serverIP
@@ -49,13 +47,6 @@ namespace EnDPoINT
             set { this._printHeader = value; }
         }
 
-        public int LogLevel
-        {
-            get { return this._logLevel; }
-            set { this._logLevel = value%4; }
-        }
-
-        
         /// <summary>
         /// Standard Constructor for default settings
         /// </summary>
@@ -66,9 +57,12 @@ namespace EnDPoINT
             this._AETitle = "EnDPoINT";
             this._printer = "None";
             this._printHeader = false;
-            this._logLevel = 2;
         }
 
+        /// <summary>
+        /// Finds the External network adress, if any
+        /// </summary>
+        /// <returns>External IPv4 Address, oder loopback if none is found</returns>
         private IPAddress findNetworkAddress()
         {
             IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());

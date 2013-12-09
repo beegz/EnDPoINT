@@ -38,9 +38,14 @@
             this.tabPagePrint = new System.Windows.Forms.TabPage();
             this.tabPageLog = new System.Windows.Forms.TabPage();
             this.groupBoxLogLevel = new System.Windows.Forms.GroupBox();
+            this.radioButtonLogVrb = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogStd = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogMin = new System.Windows.Forms.RadioButton();
+            this.radioButtonLogOff = new System.Windows.Forms.RadioButton();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageLog.SuspendLayout();
+            this.groupBoxLogLevel.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -114,12 +119,60 @@
             // 
             // groupBoxLogLevel
             // 
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogOff);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogMin);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogStd);
+            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogVrb);
             this.groupBoxLogLevel.Location = new System.Drawing.Point(3, 3);
             this.groupBoxLogLevel.Name = "groupBoxLogLevel";
-            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 100);
+            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 54);
             this.groupBoxLogLevel.TabIndex = 0;
             this.groupBoxLogLevel.TabStop = false;
             this.groupBoxLogLevel.Text = "Log Level";
+            // 
+            // radioButtonLogVrb
+            // 
+            this.radioButtonLogVrb.AutoSize = true;
+            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 20);
+            this.radioButtonLogVrb.Name = "radioButtonLogVrb";
+            this.radioButtonLogVrb.Size = new System.Drawing.Size(63, 17);
+            this.radioButtonLogVrb.TabIndex = 0;
+            this.radioButtonLogVrb.TabStop = true;
+            this.radioButtonLogVrb.Text = "verbose";
+            this.radioButtonLogVrb.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogStd
+            // 
+            this.radioButtonLogStd.AutoSize = true;
+            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 20);
+            this.radioButtonLogStd.Name = "radioButtonLogStd";
+            this.radioButtonLogStd.Size = new System.Drawing.Size(66, 17);
+            this.radioButtonLogStd.TabIndex = 1;
+            this.radioButtonLogStd.TabStop = true;
+            this.radioButtonLogStd.Text = "standard";
+            this.radioButtonLogStd.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogMin
+            // 
+            this.radioButtonLogMin.AutoSize = true;
+            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 20);
+            this.radioButtonLogMin.Name = "radioButtonLogMin";
+            this.radioButtonLogMin.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonLogMin.TabIndex = 2;
+            this.radioButtonLogMin.TabStop = true;
+            this.radioButtonLogMin.Text = "minimal";
+            this.radioButtonLogMin.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonLogOff
+            // 
+            this.radioButtonLogOff.AutoSize = true;
+            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 20);
+            this.radioButtonLogOff.Name = "radioButtonLogOff";
+            this.radioButtonLogOff.Size = new System.Drawing.Size(37, 17);
+            this.radioButtonLogOff.TabIndex = 3;
+            this.radioButtonLogOff.TabStop = true;
+            this.radioButtonLogOff.Text = "off";
+            this.radioButtonLogOff.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -141,6 +194,8 @@
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
             this.tabPageLog.ResumeLayout(false);
+            this.groupBoxLogLevel.ResumeLayout(false);
+            this.groupBoxLogLevel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +212,10 @@
         private System.Windows.Forms.TabPage tabPagePrint;
         private System.Windows.Forms.TabPage tabPageLog;
         private System.Windows.Forms.GroupBox groupBoxLogLevel;
+        private System.Windows.Forms.RadioButton radioButtonLogOff;
+        private System.Windows.Forms.RadioButton radioButtonLogMin;
+        private System.Windows.Forms.RadioButton radioButtonLogStd;
+        private System.Windows.Forms.RadioButton radioButtonLogVrb;
 
     }
 }

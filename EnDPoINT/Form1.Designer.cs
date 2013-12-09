@@ -37,8 +37,10 @@
             this.tabPageDICOM = new System.Windows.Forms.TabPage();
             this.tabPagePrint = new System.Windows.Forms.TabPage();
             this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.groupBoxLogLevel = new System.Windows.Forms.GroupBox();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabPageLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -95,19 +97,29 @@
             this.tabPagePrint.Location = new System.Drawing.Point(4, 22);
             this.tabPagePrint.Name = "tabPagePrint";
             this.tabPagePrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePrint.Size = new System.Drawing.Size(616, 378);
+            this.tabPagePrint.Size = new System.Drawing.Size(592, 378);
             this.tabPagePrint.TabIndex = 1;
             this.tabPagePrint.Text = "Printer";
             this.tabPagePrint.UseVisualStyleBackColor = true;
             // 
             // tabPageLog
             // 
+            this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
             this.tabPageLog.Location = new System.Drawing.Point(4, 22);
             this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Size = new System.Drawing.Size(616, 378);
+            this.tabPageLog.Size = new System.Drawing.Size(592, 378);
             this.tabPageLog.TabIndex = 2;
             this.tabPageLog.Text = "Logging";
             this.tabPageLog.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxLogLevel
+            // 
+            this.groupBoxLogLevel.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxLogLevel.Name = "groupBoxLogLevel";
+            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 100);
+            this.groupBoxLogLevel.TabIndex = 0;
+            this.groupBoxLogLevel.TabStop = false;
+            this.groupBoxLogLevel.Text = "Log Level";
             // 
             // frmMain
             // 
@@ -128,6 +140,7 @@
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageLog.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +156,7 @@
         private System.Windows.Forms.TabPage tabPageDICOM;
         private System.Windows.Forms.TabPage tabPagePrint;
         private System.Windows.Forms.TabPage tabPageLog;
+        private System.Windows.Forms.GroupBox groupBoxLogLevel;
 
     }
 }

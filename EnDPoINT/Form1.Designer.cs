@@ -35,6 +35,20 @@
             this.toolStripProgressBarNetworkCommunication = new System.Windows.Forms.ToolStripProgressBar();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageDICOM = new System.Windows.Forms.TabPage();
+            this.labelShowPrinter = new System.Windows.Forms.Label();
+            this.labelDisplayPrinter = new System.Windows.Forms.Label();
+            this.labelShowAETitle = new System.Windows.Forms.Label();
+            this.labelShowPort = new System.Windows.Forms.Label();
+            this.labelDisplayAETitle = new System.Windows.Forms.Label();
+            this.labelDisplayPort = new System.Windows.Forms.Label();
+            this.labelShowIP = new System.Windows.Forms.Label();
+            this.labelDisplayIP = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelAETitle = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonUpdateDICOM = new System.Windows.Forms.Button();
             this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
             this.buttonServer = new System.Windows.Forms.Button();
             this.tabPagePrint = new System.Windows.Forms.TabPage();
@@ -61,30 +75,16 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonUpdateDICOM = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelAETitle = new System.Windows.Forms.Label();
-            this.labelPort = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.labelDisplayIP = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelDisplayPort = new System.Windows.Forms.Label();
-            this.labelDisplayAETitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelDisplayPrinter = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageDICOM.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).BeginInit();
             this.tabPagePrint.SuspendLayout();
             this.groupBoxPrint.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.groupBoxLogLevel.SuspendLayout();
             this.menuStripMain.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -128,13 +128,13 @@
             // 
             // tabPageDICOM
             // 
-            this.tabPageDICOM.Controls.Add(this.label4);
+            this.tabPageDICOM.Controls.Add(this.labelShowPrinter);
             this.tabPageDICOM.Controls.Add(this.labelDisplayPrinter);
-            this.tabPageDICOM.Controls.Add(this.label3);
-            this.tabPageDICOM.Controls.Add(this.label1);
+            this.tabPageDICOM.Controls.Add(this.labelShowAETitle);
+            this.tabPageDICOM.Controls.Add(this.labelShowPort);
             this.tabPageDICOM.Controls.Add(this.labelDisplayAETitle);
             this.tabPageDICOM.Controls.Add(this.labelDisplayPort);
-            this.tabPageDICOM.Controls.Add(this.label2);
+            this.tabPageDICOM.Controls.Add(this.labelShowIP);
             this.tabPageDICOM.Controls.Add(this.labelDisplayIP);
             this.tabPageDICOM.Controls.Add(this.groupBox1);
             this.tabPageDICOM.Controls.Add(this.pictureBoxStatus);
@@ -147,6 +147,133 @@
             this.tabPageDICOM.TabIndex = 0;
             this.tabPageDICOM.Text = "DICOM";
             this.tabPageDICOM.UseVisualStyleBackColor = true;
+            // 
+            // labelShowPrinter
+            // 
+            this.labelShowPrinter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowPrinter.Location = new System.Drawing.Point(63, 269);
+            this.labelShowPrinter.Name = "labelShowPrinter";
+            this.labelShowPrinter.Size = new System.Drawing.Size(389, 23);
+            this.labelShowPrinter.TabIndex = 10;
+            this.labelShowPrinter.Text = "SelectedPrinter";
+            // 
+            // labelDisplayPrinter
+            // 
+            this.labelDisplayPrinter.AutoSize = true;
+            this.labelDisplayPrinter.Location = new System.Drawing.Point(10, 269);
+            this.labelDisplayPrinter.Name = "labelDisplayPrinter";
+            this.labelDisplayPrinter.Size = new System.Drawing.Size(37, 13);
+            this.labelDisplayPrinter.TabIndex = 9;
+            this.labelDisplayPrinter.Text = "Printer";
+            // 
+            // labelShowAETitle
+            // 
+            this.labelShowAETitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowAETitle.Location = new System.Drawing.Point(63, 242);
+            this.labelShowAETitle.Name = "labelShowAETitle";
+            this.labelShowAETitle.Size = new System.Drawing.Size(389, 23);
+            this.labelShowAETitle.TabIndex = 8;
+            this.labelShowAETitle.Text = "AETitle";
+            // 
+            // labelShowPort
+            // 
+            this.labelShowPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowPort.Location = new System.Drawing.Point(63, 219);
+            this.labelShowPort.Name = "labelShowPort";
+            this.labelShowPort.Size = new System.Drawing.Size(389, 23);
+            this.labelShowPort.TabIndex = 7;
+            this.labelShowPort.Text = "00000";
+            // 
+            // labelDisplayAETitle
+            // 
+            this.labelDisplayAETitle.AutoSize = true;
+            this.labelDisplayAETitle.Location = new System.Drawing.Point(10, 243);
+            this.labelDisplayAETitle.Name = "labelDisplayAETitle";
+            this.labelDisplayAETitle.Size = new System.Drawing.Size(44, 13);
+            this.labelDisplayAETitle.TabIndex = 6;
+            this.labelDisplayAETitle.Text = "AE Title";
+            // 
+            // labelDisplayPort
+            // 
+            this.labelDisplayPort.AutoSize = true;
+            this.labelDisplayPort.Location = new System.Drawing.Point(10, 219);
+            this.labelDisplayPort.Name = "labelDisplayPort";
+            this.labelDisplayPort.Size = new System.Drawing.Size(26, 13);
+            this.labelDisplayPort.TabIndex = 5;
+            this.labelDisplayPort.Text = "Port";
+            // 
+            // labelShowIP
+            // 
+            this.labelShowIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowIP.Location = new System.Drawing.Point(63, 196);
+            this.labelShowIP.Name = "labelShowIP";
+            this.labelShowIP.Size = new System.Drawing.Size(389, 23);
+            this.labelShowIP.TabIndex = 4;
+            this.labelShowIP.Text = "0.0.0.0";
+            // 
+            // labelDisplayIP
+            // 
+            this.labelDisplayIP.AutoSize = true;
+            this.labelDisplayIP.Location = new System.Drawing.Point(10, 197);
+            this.labelDisplayIP.Name = "labelDisplayIP";
+            this.labelDisplayIP.Size = new System.Drawing.Size(17, 13);
+            this.labelDisplayIP.TabIndex = 3;
+            this.labelDisplayIP.Text = "IP";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelPort);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.labelAETitle);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.buttonUpdateDICOM);
+            this.groupBox1.Location = new System.Drawing.Point(9, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(577, 184);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "DICOM Settings";
+            // 
+            // labelPort
+            // 
+            this.labelPort.AutoSize = true;
+            this.labelPort.Location = new System.Drawing.Point(7, 45);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(26, 13);
+            this.labelPort.TabIndex = 4;
+            this.labelPort.Text = "Port";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(57, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(80, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // labelAETitle
+            // 
+            this.labelAETitle.AutoSize = true;
+            this.labelAETitle.Location = new System.Drawing.Point(7, 19);
+            this.labelAETitle.Name = "labelAETitle";
+            this.labelAETitle.Size = new System.Drawing.Size(44, 13);
+            this.labelAETitle.TabIndex = 2;
+            this.labelAETitle.Text = "AE Title";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(57, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(514, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // buttonUpdateDICOM
+            // 
+            this.buttonUpdateDICOM.Location = new System.Drawing.Point(496, 155);
+            this.buttonUpdateDICOM.Name = "buttonUpdateDICOM";
+            this.buttonUpdateDICOM.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateDICOM.TabIndex = 0;
+            this.buttonUpdateDICOM.Text = "Update";
+            this.buttonUpdateDICOM.UseVisualStyleBackColor = true;
             // 
             // pictureBoxStatus
             // 
@@ -403,133 +530,6 @@
             this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.labelPort);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.labelAETitle);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.buttonUpdateDICOM);
-            this.groupBox1.Location = new System.Drawing.Point(9, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 184);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DICOM Settings";
-            // 
-            // buttonUpdateDICOM
-            // 
-            this.buttonUpdateDICOM.Location = new System.Drawing.Point(496, 155);
-            this.buttonUpdateDICOM.Name = "buttonUpdateDICOM";
-            this.buttonUpdateDICOM.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdateDICOM.TabIndex = 0;
-            this.buttonUpdateDICOM.Text = "Update";
-            this.buttonUpdateDICOM.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(57, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(514, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // labelAETitle
-            // 
-            this.labelAETitle.AutoSize = true;
-            this.labelAETitle.Location = new System.Drawing.Point(7, 19);
-            this.labelAETitle.Name = "labelAETitle";
-            this.labelAETitle.Size = new System.Drawing.Size(44, 13);
-            this.labelAETitle.TabIndex = 2;
-            this.labelAETitle.Text = "AE Title";
-            // 
-            // labelPort
-            // 
-            this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(7, 45);
-            this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(26, 13);
-            this.labelPort.TabIndex = 4;
-            this.labelPort.Text = "Port";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(57, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(80, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // labelDisplayIP
-            // 
-            this.labelDisplayIP.AutoSize = true;
-            this.labelDisplayIP.Location = new System.Drawing.Point(10, 197);
-            this.labelDisplayIP.Name = "labelDisplayIP";
-            this.labelDisplayIP.Size = new System.Drawing.Size(17, 13);
-            this.labelDisplayIP.TabIndex = 3;
-            this.labelDisplayIP.Text = "IP";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(63, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(389, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
-            // 
-            // labelDisplayPort
-            // 
-            this.labelDisplayPort.AutoSize = true;
-            this.labelDisplayPort.Location = new System.Drawing.Point(10, 219);
-            this.labelDisplayPort.Name = "labelDisplayPort";
-            this.labelDisplayPort.Size = new System.Drawing.Size(26, 13);
-            this.labelDisplayPort.TabIndex = 5;
-            this.labelDisplayPort.Text = "Port";
-            // 
-            // labelDisplayAETitle
-            // 
-            this.labelDisplayAETitle.AutoSize = true;
-            this.labelDisplayAETitle.Location = new System.Drawing.Point(10, 243);
-            this.labelDisplayAETitle.Name = "labelDisplayAETitle";
-            this.labelDisplayAETitle.Size = new System.Drawing.Size(44, 13);
-            this.labelDisplayAETitle.TabIndex = 6;
-            this.labelDisplayAETitle.Text = "AE Title";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 242);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(389, 23);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
-            // 
-            // labelDisplayPrinter
-            // 
-            this.labelDisplayPrinter.AutoSize = true;
-            this.labelDisplayPrinter.Location = new System.Drawing.Point(10, 269);
-            this.labelDisplayPrinter.Name = "labelDisplayPrinter";
-            this.labelDisplayPrinter.Size = new System.Drawing.Size(37, 13);
-            this.labelDisplayPrinter.TabIndex = 9;
-            this.labelDisplayPrinter.Text = "Printer";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(63, 269);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(389, 23);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +553,8 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPageDICOM.ResumeLayout(false);
             this.tabPageDICOM.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).EndInit();
             this.tabPagePrint.ResumeLayout(false);
             this.groupBoxPrint.ResumeLayout(false);
@@ -563,8 +565,6 @@
             this.groupBoxLogLevel.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,13 +604,13 @@
         private System.Windows.Forms.Button buttonPageDown;
         private System.Windows.Forms.Button buttonServer;
         private System.Windows.Forms.PictureBox pictureBoxStatus;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelShowPrinter;
         private System.Windows.Forms.Label labelDisplayPrinter;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelShowAETitle;
+        private System.Windows.Forms.Label labelShowPort;
         private System.Windows.Forms.Label labelDisplayAETitle;
         private System.Windows.Forms.Label labelDisplayPort;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelShowIP;
         private System.Windows.Forms.Label labelDisplayIP;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelPort;

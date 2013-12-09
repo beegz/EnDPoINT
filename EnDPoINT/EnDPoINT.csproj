@@ -63,6 +63,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +77,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-dev-printer-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-dev-printer-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-dev-printer-network.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnome-dev-printer-new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-7.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

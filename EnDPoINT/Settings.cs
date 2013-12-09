@@ -8,15 +8,19 @@ using System.Threading.Tasks;
 
 namespace EnDPoINT
 {
+    /// <summary>
+    /// Keeps alls settings for the EnDPoINT DICOM server.
+    /// </summary>
     class Settings
     {
+        #region Private Members
         private IPAddress _serverIP;
         private int _port;
-        private String _AETitle;
-        private String _printer;
+        private string _AETitle;
+        private string _printer;
         private bool _printHeader;
-
-        // Get/Set
+        #endregion
+        #region Getters and Setters
         public IPAddress serverIP
         {
             get { return _serverIP; }
@@ -46,7 +50,9 @@ namespace EnDPoINT
             get { return this._printHeader; }
             set { this._printHeader = value; }
         }
+        #endregion
 
+        #region Constructors
         /// <summary>
         /// Standard Constructor for default settings
         /// </summary>
@@ -58,7 +64,9 @@ namespace EnDPoINT
             this._printer = "None";
             this._printHeader = false;
         }
+        #endregion
 
+        #region Utility
         /// <summary>
         /// Finds the External network adress, if any
         /// </summary>
@@ -77,5 +85,6 @@ namespace EnDPoINT
             IPAddress.TryParse("127.0.0.1",out _ip);
             return _ip;
         }
+        #endregion
     }
 }

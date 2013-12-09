@@ -21,6 +21,7 @@ namespace EnDPoINT
         private bool _globalStatus;
         private Settings _serverSettings;
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        
         /// <summary>
         /// Main init
         /// </summary>
@@ -39,20 +40,17 @@ namespace EnDPoINT
             //setup log4net
             log4net.Config.XmlConfigurator.Configure();
             
-
             //setup globals
             this._globalStatus = false;
             this._serverSettings = new Settings();
 
             //update installed printers
-            foreach (String s in PrinterSettings.InstalledPrinters)
+            foreach (string s in PrinterSettings.InstalledPrinters)
             {
                 this.comboBoxPrinters.Items.Add(s);
             }
             this.updateVisuals();
 
-            //init dicom stuff
-  
             this.toolStripStatusLabelServer.Text = "Server is ready to start.";
             log.Info("EnDPoINT DICOM printserver started");
         }
@@ -90,6 +88,8 @@ namespace EnDPoINT
                     this.pictureBoxStatus.Image = Properties.Resources.nework_on;
                     this.buttonServer.Text = "Stop EnDPoINT Server";
                     this.toolStripStatusLabelServer.Text = "Server started...";
+                    dcmServer.StoragePath = ".\\";
+                    dcmServer.StartListening(this._serverSettings.AETitle, this._serverSettings.serverIP ,this._serverSettings.serverPort);
                     log.Info("DICOM server started.");
                 }
             else
@@ -97,6 +97,7 @@ namespace EnDPoINT
                     this.pictureBoxStatus.Image = Properties.Resources.network_off;
                     this.buttonServer.Text = "Start EnDPoINT Server";
                     this.toolStripStatusLabelServer.Text = "Server stopped...";
+                    dcmServer.StopListening(this._serverSettings.serverPort);
                     log.Info("DICOM server stopped.");
                 }
 

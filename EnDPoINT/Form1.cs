@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,15 @@ namespace EnDPoINT
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //set startout visuals
             this.Icon = Properties.Resources.printer;
             this.toolStripProgressBarNetworkCommunication.Visible = false;
+
+            //update installed printers
+            foreach (String s in PrinterSettings.InstalledPrinters)
+            {
+                this.comboBoxPrinters.Items.Add(s);
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +49,11 @@ namespace EnDPoINT
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

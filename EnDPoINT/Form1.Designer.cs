@@ -53,12 +53,21 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxPrint = new System.Windows.Forms.GroupBox();
+            this.checkBoxDICOMHeader = new System.Windows.Forms.CheckBox();
+            this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
+            this.buttonPageUp = new System.Windows.Forms.Button();
+            this.comboBoxPrintPreviewZoom = new System.Windows.Forms.ComboBox();
+            this.buttonPageDown = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabPageDICOM.SuspendLayout();
             this.tabPagePrint.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.groupBoxLogLevel.SuspendLayout();
             this.menuStripMain.SuspendLayout();
+            this.groupBoxPrint.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -102,22 +111,28 @@
             // 
             // tabPageDICOM
             // 
+            this.tabPageDICOM.Controls.Add(this.button1);
             this.tabPageDICOM.Location = new System.Drawing.Point(4, 22);
             this.tabPageDICOM.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.tabPageDICOM.Name = "tabPageDICOM";
             this.tabPageDICOM.Padding = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.tabPageDICOM.Size = new System.Drawing.Size(592, 378);
+            this.tabPageDICOM.Size = new System.Drawing.Size(592, 359);
             this.tabPageDICOM.TabIndex = 0;
             this.tabPageDICOM.Text = "DICOM";
             this.tabPageDICOM.UseVisualStyleBackColor = true;
             // 
             // tabPagePrint
             // 
+            this.tabPagePrint.Controls.Add(this.buttonPageDown);
+            this.tabPagePrint.Controls.Add(this.comboBoxPrintPreviewZoom);
+            this.tabPagePrint.Controls.Add(this.buttonPageUp);
+            this.tabPagePrint.Controls.Add(this.printPreviewControl);
+            this.tabPagePrint.Controls.Add(this.groupBoxPrint);
             this.tabPagePrint.Controls.Add(this.comboBoxPrinters);
             this.tabPagePrint.Location = new System.Drawing.Point(4, 22);
             this.tabPagePrint.Name = "tabPagePrint";
             this.tabPagePrint.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePrint.Size = new System.Drawing.Size(592, 378);
+            this.tabPagePrint.Size = new System.Drawing.Size(592, 359);
             this.tabPagePrint.TabIndex = 1;
             this.tabPagePrint.Text = "Printer";
             this.tabPagePrint.UseVisualStyleBackColor = true;
@@ -239,10 +254,12 @@
             // 
             // comboBoxPrinters
             // 
+            this.comboBoxPrinters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPrinters.FormattingEnabled = true;
             this.comboBoxPrinters.Location = new System.Drawing.Point(6, 6);
             this.comboBoxPrinters.Name = "comboBoxPrinters";
             this.comboBoxPrinters.Size = new System.Drawing.Size(580, 21);
+            this.comboBoxPrinters.Sorted = true;
             this.comboBoxPrinters.TabIndex = 0;
             // 
             // menuStripMain
@@ -285,6 +302,70 @@
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // groupBoxPrint
+            // 
+            this.groupBoxPrint.Controls.Add(this.checkBoxDICOMHeader);
+            this.groupBoxPrint.Location = new System.Drawing.Point(6, 33);
+            this.groupBoxPrint.Name = "groupBoxPrint";
+            this.groupBoxPrint.Size = new System.Drawing.Size(289, 320);
+            this.groupBoxPrint.TabIndex = 1;
+            this.groupBoxPrint.TabStop = false;
+            this.groupBoxPrint.Text = "Print Settings";
+            // 
+            // checkBoxDICOMHeader
+            // 
+            this.checkBoxDICOMHeader.AutoSize = true;
+            this.checkBoxDICOMHeader.Location = new System.Drawing.Point(6, 19);
+            this.checkBoxDICOMHeader.Name = "checkBoxDICOMHeader";
+            this.checkBoxDICOMHeader.Size = new System.Drawing.Size(188, 17);
+            this.checkBoxDICOMHeader.TabIndex = 0;
+            this.checkBoxDICOMHeader.Text = "include DICOM header information";
+            this.checkBoxDICOMHeader.UseVisualStyleBackColor = true;
+            // 
+            // printPreviewControl
+            // 
+            this.printPreviewControl.Location = new System.Drawing.Point(301, 33);
+            this.printPreviewControl.Name = "printPreviewControl";
+            this.printPreviewControl.Size = new System.Drawing.Size(285, 287);
+            this.printPreviewControl.TabIndex = 2;
+            // 
+            // buttonPageUp
+            // 
+            this.buttonPageUp.Location = new System.Drawing.Point(510, 326);
+            this.buttonPageUp.Name = "buttonPageUp";
+            this.buttonPageUp.Size = new System.Drawing.Size(75, 23);
+            this.buttonPageUp.TabIndex = 3;
+            this.buttonPageUp.Text = ">>";
+            this.buttonPageUp.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxPrintPreviewZoom
+            // 
+            this.comboBoxPrintPreviewZoom.FormattingEnabled = true;
+            this.comboBoxPrintPreviewZoom.Location = new System.Drawing.Point(383, 328);
+            this.comboBoxPrintPreviewZoom.MaxLength = 4;
+            this.comboBoxPrintPreviewZoom.Name = "comboBoxPrintPreviewZoom";
+            this.comboBoxPrintPreviewZoom.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPrintPreviewZoom.TabIndex = 5;
+            this.comboBoxPrintPreviewZoom.Text = "30%";
+            // 
+            // buttonPageDown
+            // 
+            this.buttonPageDown.Location = new System.Drawing.Point(301, 326);
+            this.buttonPageDown.Name = "buttonPageDown";
+            this.buttonPageDown.Size = new System.Drawing.Size(75, 23);
+            this.buttonPageDown.TabIndex = 6;
+            this.buttonPageDown.Text = "<<";
+            this.buttonPageDown.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(511, 330);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +387,7 @@
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageDICOM.ResumeLayout(false);
             this.tabPagePrint.ResumeLayout(false);
             this.tabPageLog.ResumeLayout(false);
             this.tabPageLog.PerformLayout();
@@ -313,6 +395,8 @@
             this.groupBoxLogLevel.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            this.groupBoxPrint.ResumeLayout(false);
+            this.groupBoxPrint.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,6 +428,13 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutEnDPoINTToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBoxPrint;
+        private System.Windows.Forms.CheckBox checkBoxDICOMHeader;
+        private System.Windows.Forms.ComboBox comboBoxPrintPreviewZoom;
+        private System.Windows.Forms.Button buttonPageUp;
+        private System.Windows.Forms.PrintPreviewControl printPreviewControl;
+        private System.Windows.Forms.Button buttonPageDown;
+        private System.Windows.Forms.Button button1;
 
     }
 }

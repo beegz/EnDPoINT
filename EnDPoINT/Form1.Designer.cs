@@ -35,6 +35,10 @@
             this.toolStripProgressBarNetworkCommunication = new System.Windows.Forms.ToolStripProgressBar();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageDICOM = new System.Windows.Forms.TabPage();
+            this.labelShowLogLevel = new System.Windows.Forms.Label();
+            this.labelLogLevel = new System.Windows.Forms.Label();
+            this.labelShowPrintHeaders = new System.Windows.Forms.Label();
+            this.labelPrintHeaders = new System.Windows.Forms.Label();
             this.labelShowPrinter = new System.Windows.Forms.Label();
             this.labelDisplayPrinter = new System.Windows.Forms.Label();
             this.labelShowAETitle = new System.Windows.Forms.Label();
@@ -60,25 +64,22 @@
             this.checkBoxDICOMHeader = new System.Windows.Forms.CheckBox();
             this.comboBoxPrinters = new System.Windows.Forms.ComboBox();
             this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBoxLogfile = new System.Windows.Forms.TextBox();
             this.labelLog = new System.Windows.Forms.Label();
             this.buttonSetLogfile = new System.Windows.Forms.Button();
-            this.groupBoxLogLevel = new System.Windows.Forms.GroupBox();
-            this.radioButtonLogOff = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogMin = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogStd = new System.Windows.Forms.RadioButton();
-            this.radioButtonLogVrb = new System.Windows.Forms.RadioButton();
             this.openFileDialogLogfile = new System.Windows.Forms.OpenFileDialog();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelShowPrintHeaders = new System.Windows.Forms.Label();
-            this.labelPrintHeaders = new System.Windows.Forms.Label();
-            this.labelShowLogLevel = new System.Windows.Forms.Label();
-            this.labelLogLevel = new System.Windows.Forms.Label();
+            this.checkBoxDebugFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxInfoFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxWarningFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxFatalFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxErrorFilter = new System.Windows.Forms.CheckBox();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageDICOM.SuspendLayout();
@@ -87,7 +88,6 @@
             this.tabPagePrint.SuspendLayout();
             this.groupBoxPrint.SuspendLayout();
             this.tabPageLog.SuspendLayout();
-            this.groupBoxLogLevel.SuspendLayout();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +155,42 @@
             this.tabPageDICOM.TabIndex = 0;
             this.tabPageDICOM.Text = "DICOM";
             this.tabPageDICOM.UseVisualStyleBackColor = true;
+            // 
+            // labelShowLogLevel
+            // 
+            this.labelShowLogLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowLogLevel.Location = new System.Drawing.Point(125, 320);
+            this.labelShowLogLevel.Name = "labelShowLogLevel";
+            this.labelShowLogLevel.Size = new System.Drawing.Size(327, 23);
+            this.labelShowLogLevel.TabIndex = 14;
+            this.labelShowLogLevel.Text = "standard";
+            // 
+            // labelLogLevel
+            // 
+            this.labelLogLevel.AutoSize = true;
+            this.labelLogLevel.Location = new System.Drawing.Point(10, 320);
+            this.labelLogLevel.Name = "labelLogLevel";
+            this.labelLogLevel.Size = new System.Drawing.Size(54, 13);
+            this.labelLogLevel.TabIndex = 13;
+            this.labelLogLevel.Text = "Log Level";
+            // 
+            // labelShowPrintHeaders
+            // 
+            this.labelShowPrintHeaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowPrintHeaders.Location = new System.Drawing.Point(125, 292);
+            this.labelShowPrintHeaders.Name = "labelShowPrintHeaders";
+            this.labelShowPrintHeaders.Size = new System.Drawing.Size(327, 23);
+            this.labelShowPrintHeaders.TabIndex = 12;
+            this.labelShowPrintHeaders.Text = "Yes or No";
+            // 
+            // labelPrintHeaders
+            // 
+            this.labelPrintHeaders.AutoSize = true;
+            this.labelPrintHeaders.Location = new System.Drawing.Point(10, 292);
+            this.labelPrintHeaders.Name = "labelPrintHeaders";
+            this.labelPrintHeaders.Size = new System.Drawing.Size(109, 13);
+            this.labelPrintHeaders.TabIndex = 11;
+            this.labelPrintHeaders.Text = "Print DICOM Headers";
             // 
             // labelShowPrinter
             // 
@@ -389,11 +425,16 @@
             // 
             // tabPageLog
             // 
+            this.tabPageLog.Controls.Add(this.checkBoxErrorFilter);
+            this.tabPageLog.Controls.Add(this.checkBoxFatalFilter);
+            this.tabPageLog.Controls.Add(this.checkBoxWarningFilter);
+            this.tabPageLog.Controls.Add(this.checkBoxInfoFilter);
+            this.tabPageLog.Controls.Add(this.checkBoxDebugFilter);
+            this.tabPageLog.Controls.Add(this.button1);
             this.tabPageLog.Controls.Add(this.richTextBox1);
             this.tabPageLog.Controls.Add(this.textBoxLogfile);
             this.tabPageLog.Controls.Add(this.labelLog);
             this.tabPageLog.Controls.Add(this.buttonSetLogfile);
-            this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
             this.tabPageLog.Location = new System.Drawing.Point(4, 22);
             this.tabPageLog.Name = "tabPageLog";
             this.tabPageLog.Size = new System.Drawing.Size(592, 359);
@@ -401,19 +442,28 @@
             this.tabPageLog.Text = "Logging";
             this.tabPageLog.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(467, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 91);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 61);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(589, 284);
+            this.richTextBox1.Size = new System.Drawing.Size(589, 314);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
             // textBoxLogfile
             // 
             this.textBoxLogfile.Enabled = false;
-            this.textBoxLogfile.Location = new System.Drawing.Point(51, 65);
+            this.textBoxLogfile.Location = new System.Drawing.Point(51, 6);
             this.textBoxLogfile.Name = "textBoxLogfile";
             this.textBoxLogfile.Size = new System.Drawing.Size(410, 20);
             this.textBoxLogfile.TabIndex = 4;
@@ -422,7 +472,7 @@
             // labelLog
             // 
             this.labelLog.AutoSize = true;
-            this.labelLog.Location = new System.Drawing.Point(4, 68);
+            this.labelLog.Location = new System.Drawing.Point(3, 8);
             this.labelLog.Name = "labelLog";
             this.labelLog.Size = new System.Drawing.Size(41, 13);
             this.labelLog.TabIndex = 3;
@@ -430,72 +480,12 @@
             // 
             // buttonSetLogfile
             // 
-            this.buttonSetLogfile.Location = new System.Drawing.Point(467, 63);
+            this.buttonSetLogfile.Location = new System.Drawing.Point(467, 3);
             this.buttonSetLogfile.Name = "buttonSetLogfile";
             this.buttonSetLogfile.Size = new System.Drawing.Size(122, 23);
             this.buttonSetLogfile.TabIndex = 1;
-            this.buttonSetLogfile.Text = "Open Logfile...";
+            this.buttonSetLogfile.Text = "Change Logfile...";
             this.buttonSetLogfile.UseVisualStyleBackColor = true;
-            this.buttonSetLogfile.Click += new System.EventHandler(this.buttonSetLogfile_Click);
-            // 
-            // groupBoxLogLevel
-            // 
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogOff);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogMin);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogStd);
-            this.groupBoxLogLevel.Controls.Add(this.radioButtonLogVrb);
-            this.groupBoxLogLevel.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxLogLevel.Name = "groupBoxLogLevel";
-            this.groupBoxLogLevel.Size = new System.Drawing.Size(586, 54);
-            this.groupBoxLogLevel.TabIndex = 0;
-            this.groupBoxLogLevel.TabStop = false;
-            this.groupBoxLogLevel.Text = "Log Level";
-            // 
-            // radioButtonLogOff
-            // 
-            this.radioButtonLogOff.AutoSize = true;
-            this.radioButtonLogOff.Location = new System.Drawing.Point(495, 23);
-            this.radioButtonLogOff.Name = "radioButtonLogOff";
-            this.radioButtonLogOff.Size = new System.Drawing.Size(37, 17);
-            this.radioButtonLogOff.TabIndex = 3;
-            this.radioButtonLogOff.Text = "off";
-            this.radioButtonLogOff.UseVisualStyleBackColor = true;
-            this.radioButtonLogOff.CheckedChanged += new System.EventHandler(this.radioButtonLogOff_CheckedChanged);
-            // 
-            // radioButtonLogMin
-            // 
-            this.radioButtonLogMin.AutoSize = true;
-            this.radioButtonLogMin.Location = new System.Drawing.Point(338, 23);
-            this.radioButtonLogMin.Name = "radioButtonLogMin";
-            this.radioButtonLogMin.Size = new System.Drawing.Size(59, 17);
-            this.radioButtonLogMin.TabIndex = 2;
-            this.radioButtonLogMin.Text = "minimal";
-            this.radioButtonLogMin.UseVisualStyleBackColor = true;
-            this.radioButtonLogMin.CheckedChanged += new System.EventHandler(this.radioButtonLogMin_CheckedChanged);
-            // 
-            // radioButtonLogStd
-            // 
-            this.radioButtonLogStd.AutoSize = true;
-            this.radioButtonLogStd.Checked = true;
-            this.radioButtonLogStd.Location = new System.Drawing.Point(172, 23);
-            this.radioButtonLogStd.Name = "radioButtonLogStd";
-            this.radioButtonLogStd.Size = new System.Drawing.Size(66, 17);
-            this.radioButtonLogStd.TabIndex = 1;
-            this.radioButtonLogStd.TabStop = true;
-            this.radioButtonLogStd.Text = "standard";
-            this.radioButtonLogStd.UseVisualStyleBackColor = true;
-            this.radioButtonLogStd.CheckedChanged += new System.EventHandler(this.radioButtonLogStd_CheckedChanged);
-            // 
-            // radioButtonLogVrb
-            // 
-            this.radioButtonLogVrb.AutoSize = true;
-            this.radioButtonLogVrb.Location = new System.Drawing.Point(7, 23);
-            this.radioButtonLogVrb.Name = "radioButtonLogVrb";
-            this.radioButtonLogVrb.Size = new System.Drawing.Size(63, 17);
-            this.radioButtonLogVrb.TabIndex = 0;
-            this.radioButtonLogVrb.Text = "verbose";
-            this.radioButtonLogVrb.UseVisualStyleBackColor = true;
-            this.radioButtonLogVrb.CheckedChanged += new System.EventHandler(this.radioButtonLogVrb_CheckedChanged);
             // 
             // openFileDialogLogfile
             // 
@@ -545,41 +535,55 @@
             this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
             // 
-            // labelShowPrintHeaders
+            // checkBoxDebugFilter
             // 
-            this.labelShowPrintHeaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShowPrintHeaders.Location = new System.Drawing.Point(125, 292);
-            this.labelShowPrintHeaders.Name = "labelShowPrintHeaders";
-            this.labelShowPrintHeaders.Size = new System.Drawing.Size(327, 23);
-            this.labelShowPrintHeaders.TabIndex = 12;
-            this.labelShowPrintHeaders.Text = "Yes or No";
+            this.checkBoxDebugFilter.AutoSize = true;
+            this.checkBoxDebugFilter.Location = new System.Drawing.Point(381, 36);
+            this.checkBoxDebugFilter.Name = "checkBoxDebugFilter";
+            this.checkBoxDebugFilter.Size = new System.Drawing.Size(64, 17);
+            this.checkBoxDebugFilter.TabIndex = 7;
+            this.checkBoxDebugFilter.Text = "DEBUG";
+            this.checkBoxDebugFilter.UseVisualStyleBackColor = true;
             // 
-            // labelPrintHeaders
+            // checkBoxInfoFilter
             // 
-            this.labelPrintHeaders.AutoSize = true;
-            this.labelPrintHeaders.Location = new System.Drawing.Point(10, 292);
-            this.labelPrintHeaders.Name = "labelPrintHeaders";
-            this.labelPrintHeaders.Size = new System.Drawing.Size(109, 13);
-            this.labelPrintHeaders.TabIndex = 11;
-            this.labelPrintHeaders.Text = "Print DICOM Headers";
+            this.checkBoxInfoFilter.AutoSize = true;
+            this.checkBoxInfoFilter.Location = new System.Drawing.Point(294, 36);
+            this.checkBoxInfoFilter.Name = "checkBoxInfoFilter";
+            this.checkBoxInfoFilter.Size = new System.Drawing.Size(51, 17);
+            this.checkBoxInfoFilter.TabIndex = 8;
+            this.checkBoxInfoFilter.Text = "INFO";
+            this.checkBoxInfoFilter.UseVisualStyleBackColor = true;
             // 
-            // labelShowLogLevel
+            // checkBoxWarningFilter
             // 
-            this.labelShowLogLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShowLogLevel.Location = new System.Drawing.Point(125, 320);
-            this.labelShowLogLevel.Name = "labelShowLogLevel";
-            this.labelShowLogLevel.Size = new System.Drawing.Size(327, 23);
-            this.labelShowLogLevel.TabIndex = 14;
-            this.labelShowLogLevel.Text = "standard";
+            this.checkBoxWarningFilter.AutoSize = true;
+            this.checkBoxWarningFilter.Location = new System.Drawing.Point(194, 36);
+            this.checkBoxWarningFilter.Name = "checkBoxWarningFilter";
+            this.checkBoxWarningFilter.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxWarningFilter.TabIndex = 9;
+            this.checkBoxWarningFilter.Text = "WARN";
+            this.checkBoxWarningFilter.UseVisualStyleBackColor = true;
             // 
-            // labelLogLevel
+            // checkBoxFatalFilter
             // 
-            this.labelLogLevel.AutoSize = true;
-            this.labelLogLevel.Location = new System.Drawing.Point(10, 320);
-            this.labelLogLevel.Name = "labelLogLevel";
-            this.labelLogLevel.Size = new System.Drawing.Size(54, 13);
-            this.labelLogLevel.TabIndex = 13;
-            this.labelLogLevel.Text = "Log Level";
+            this.checkBoxFatalFilter.AutoSize = true;
+            this.checkBoxFatalFilter.Location = new System.Drawing.Point(6, 36);
+            this.checkBoxFatalFilter.Name = "checkBoxFatalFilter";
+            this.checkBoxFatalFilter.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxFatalFilter.TabIndex = 10;
+            this.checkBoxFatalFilter.Text = "FATAL";
+            this.checkBoxFatalFilter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxErrorFilter
+            // 
+            this.checkBoxErrorFilter.AutoSize = true;
+            this.checkBoxErrorFilter.Location = new System.Drawing.Point(92, 36);
+            this.checkBoxErrorFilter.Name = "checkBoxErrorFilter";
+            this.checkBoxErrorFilter.Size = new System.Drawing.Size(65, 17);
+            this.checkBoxErrorFilter.TabIndex = 11;
+            this.checkBoxErrorFilter.Text = "ERROR";
+            this.checkBoxErrorFilter.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -612,8 +616,6 @@
             this.groupBoxPrint.PerformLayout();
             this.tabPageLog.ResumeLayout(false);
             this.tabPageLog.PerformLayout();
-            this.groupBoxLogLevel.ResumeLayout(false);
-            this.groupBoxLogLevel.PerformLayout();
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
@@ -631,11 +633,6 @@
         private System.Windows.Forms.TabPage tabPageDICOM;
         private System.Windows.Forms.TabPage tabPagePrint;
         private System.Windows.Forms.TabPage tabPageLog;
-        private System.Windows.Forms.GroupBox groupBoxLogLevel;
-        private System.Windows.Forms.RadioButton radioButtonLogOff;
-        private System.Windows.Forms.RadioButton radioButtonLogMin;
-        private System.Windows.Forms.RadioButton radioButtonLogStd;
-        private System.Windows.Forms.RadioButton radioButtonLogVrb;
         private System.Windows.Forms.TextBox textBoxLogfile;
         private System.Windows.Forms.Label labelLog;
         private System.Windows.Forms.Button buttonSetLogfile;
@@ -673,6 +670,12 @@
         private System.Windows.Forms.Label labelPrintHeaders;
         private System.Windows.Forms.Label labelShowLogLevel;
         private System.Windows.Forms.Label labelLogLevel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBoxErrorFilter;
+        private System.Windows.Forms.CheckBox checkBoxFatalFilter;
+        private System.Windows.Forms.CheckBox checkBoxWarningFilter;
+        private System.Windows.Forms.CheckBox checkBoxInfoFilter;
+        private System.Windows.Forms.CheckBox checkBoxDebugFilter;
 
     }
 }

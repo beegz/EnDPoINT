@@ -47,10 +47,18 @@
             this.openFileDialogLogfile = new System.Windows.Forms.OpenFileDialog();
             this.textBoxLogfile = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comboBoxPrinters = new System.Windows.Forms.ComboBox();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabPagePrint.SuspendLayout();
             this.tabPageLog.SuspendLayout();
             this.groupBoxLogLevel.SuspendLayout();
+            this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIconMain
@@ -86,10 +94,10 @@
             this.tabControlMain.Controls.Add(this.tabPageDICOM);
             this.tabControlMain.Controls.Add(this.tabPagePrint);
             this.tabControlMain.Controls.Add(this.tabPageLog);
-            this.tabControlMain.Location = new System.Drawing.Point(12, 12);
+            this.tabControlMain.Location = new System.Drawing.Point(12, 31);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(600, 404);
+            this.tabControlMain.Size = new System.Drawing.Size(600, 385);
             this.tabControlMain.TabIndex = 1;
             // 
             // tabPageDICOM
@@ -105,6 +113,7 @@
             // 
             // tabPagePrint
             // 
+            this.tabPagePrint.Controls.Add(this.comboBoxPrinters);
             this.tabPagePrint.Location = new System.Drawing.Point(4, 22);
             this.tabPagePrint.Name = "tabPagePrint";
             this.tabPagePrint.Padding = new System.Windows.Forms.Padding(3);
@@ -122,7 +131,7 @@
             this.tabPageLog.Controls.Add(this.groupBoxLogLevel);
             this.tabPageLog.Location = new System.Drawing.Point(4, 22);
             this.tabPageLog.Name = "tabPageLog";
-            this.tabPageLog.Size = new System.Drawing.Size(592, 378);
+            this.tabPageLog.Size = new System.Drawing.Size(592, 359);
             this.tabPageLog.TabIndex = 2;
             this.tabPageLog.Text = "Logging";
             this.tabPageLog.UseVisualStyleBackColor = true;
@@ -228,6 +237,54 @@
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
+            // comboBoxPrinters
+            // 
+            this.comboBoxPrinters.FormattingEnabled = true;
+            this.comboBoxPrinters.Location = new System.Drawing.Point(6, 6);
+            this.comboBoxPrinters.Name = "comboBoxPrinters";
+            this.comboBoxPrinters.Size = new System.Drawing.Size(580, 21);
+            this.comboBoxPrinters.TabIndex = 0;
+            // 
+            // menuStripMain
+            // 
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(624, 24);
+            this.menuStripMain.TabIndex = 2;
+            this.menuStripMain.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutEnDPoINTToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // aboutEnDPoINTToolStripMenuItem
+            // 
+            this.aboutEnDPoINTToolStripMenuItem.Name = "aboutEnDPoINTToolStripMenuItem";
+            this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +292,9 @@
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.statusStripMain);
+            this.Controls.Add(this.menuStripMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStripMain;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(640, 480);
             this.MinimumSize = new System.Drawing.Size(640, 480);
@@ -247,10 +306,13 @@
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPagePrint.ResumeLayout(false);
             this.tabPageLog.ResumeLayout(false);
             this.tabPageLog.PerformLayout();
             this.groupBoxLogLevel.ResumeLayout(false);
             this.groupBoxLogLevel.PerformLayout();
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +338,12 @@
         private System.Windows.Forms.Button buttonSetLogfile;
         private System.Windows.Forms.OpenFileDialog openFileDialogLogfile;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBoxPrinters;
+        private System.Windows.Forms.MenuStrip menuStripMain;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutEnDPoINTToolStripMenuItem;
 
     }
 }

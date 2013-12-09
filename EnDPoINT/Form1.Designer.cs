@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
+            // 
+            // notifyIconMain
+            // 
+            this.notifyIconMain.Text = "EnDPoINT DICOM Printserver";
+            this.notifyIconMain.Visible = true;
             // 
             // frmMain
             // 
@@ -48,6 +55,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon notifyIconMain;
+
     }
 }
 

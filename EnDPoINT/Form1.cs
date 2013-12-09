@@ -15,6 +15,9 @@ namespace EnDPoINT
     {
         //global vars
         bool globalStatus;
+        Settings serverSettings;
+        Log serverLog;
+
 
         public frmMain()
         {

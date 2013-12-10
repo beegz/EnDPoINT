@@ -5,10 +5,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using ClearCanvas.Dicom.IO;
 using ClearCanvas.Common;
+using ClearCanvas.ImageViewer;
+using ClearCanvas.ImageViewer.StudyManagement;
 using ClearCanvas.Dicom;
 using ClearCanvas.Dicom.Network;
 using ClearCanvas.Dicom.Utilities.Statistics;
+using System.Drawing;
 
 namespace EnDPoINT
 {
@@ -48,7 +52,7 @@ namespace EnDPoINT
         public static bool Rle { get; set; }
         public static bool J2KLossy { get; set; }
         public static bool J2KLossless { get; set; }
-        
+
         #endregion
 
         #region Private Methods
@@ -339,8 +343,7 @@ namespace EnDPoINT
 
             dicomFile.Save(DicomWriteOptions.None);
 
-            Platform.Log(LogLevel.Info, "Received SOP Instance: {0} for patient {1} in syntax {2}", sopInstanceUid,
-                         patientName, syntax.Name);
+            Platform.Log(LogLevel.Info, "Received SOP Instance: {0} for patient {1} in syntax {2}", sopInstanceUid, patientName, syntax.Name);
 
             server.SendCStoreResponse(presentationID, message.MessageId,
                 sopInstanceUid.UID,
@@ -361,8 +364,7 @@ namespace EnDPoINT
             Platform.Log(LogLevel.Info, "Received association release request from  {0}.", association.CallingAE);
         }
 
-        public void OnReceiveDimseCommand(DicomServer server, ServerAssociationParameters association, byte presentationId,
-                                          DicomAttributeCollection command)
+        public void OnReceiveDimseCommand(DicomServer server, ServerAssociationParameters association, byte presentationId,DicomAttributeCollection command)
         {
         }
 
@@ -388,11 +390,6 @@ namespace EnDPoINT
             Platform.Log(LogLevel.Info, "Received DIMSE Timeout, continuing listening for messages");
         }
 
-
-        protected void LogAssociationStatistics(ServerAssociationParameters association)
-        {
-
-        }
         #endregion
 
     }

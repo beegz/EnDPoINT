@@ -48,6 +48,9 @@
             this.labelShowIP = new System.Windows.Forms.Label();
             this.labelDisplayIP = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxSpoolDir = new System.Windows.Forms.TextBox();
+            this.labelSpoolDir = new System.Windows.Forms.Label();
+            this.buttonSpoolDir = new System.Windows.Forms.Button();
             this.labelPort = new System.Windows.Forms.Label();
             this.textBoxPort = new System.Windows.Forms.TextBox();
             this.labelAETitle = new System.Windows.Forms.Label();
@@ -64,8 +67,13 @@
             this.checkBoxDICOMHeader = new System.Windows.Forms.CheckBox();
             this.comboBoxPrinters = new System.Windows.Forms.ComboBox();
             this.tabPageLog = new System.Windows.Forms.TabPage();
+            this.checkBoxErrorFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxFatalFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxWarningFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxInfoFilter = new System.Windows.Forms.CheckBox();
+            this.checkBoxDebugFilter = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
             this.textBoxLogfile = new System.Windows.Forms.TextBox();
             this.labelLog = new System.Windows.Forms.Label();
             this.buttonSetLogfile = new System.Windows.Forms.Button();
@@ -75,11 +83,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutEnDPoINTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBoxDebugFilter = new System.Windows.Forms.CheckBox();
-            this.checkBoxInfoFilter = new System.Windows.Forms.CheckBox();
-            this.checkBoxWarningFilter = new System.Windows.Forms.CheckBox();
-            this.checkBoxFatalFilter = new System.Windows.Forms.CheckBox();
-            this.checkBoxErrorFilter = new System.Windows.Forms.CheckBox();
+            this.imageListPrint = new System.Windows.Forms.ImageList(this.components);
             this.statusStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageDICOM.SuspendLayout();
@@ -159,9 +163,9 @@
             // labelShowLogLevel
             // 
             this.labelShowLogLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShowLogLevel.Location = new System.Drawing.Point(125, 320);
+            this.labelShowLogLevel.Location = new System.Drawing.Point(70, 320);
             this.labelShowLogLevel.Name = "labelShowLogLevel";
-            this.labelShowLogLevel.Size = new System.Drawing.Size(327, 23);
+            this.labelShowLogLevel.Size = new System.Drawing.Size(382, 23);
             this.labelShowLogLevel.TabIndex = 14;
             this.labelShowLogLevel.Text = "standard";
             // 
@@ -266,6 +270,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxSpoolDir);
+            this.groupBox1.Controls.Add(this.labelSpoolDir);
+            this.groupBox1.Controls.Add(this.buttonSpoolDir);
             this.groupBox1.Controls.Add(this.labelPort);
             this.groupBox1.Controls.Add(this.textBoxPort);
             this.groupBox1.Controls.Add(this.labelAETitle);
@@ -278,18 +285,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DICOM Settings";
             // 
+            // textBoxSpoolDir
+            // 
+            this.textBoxSpoolDir.Enabled = false;
+            this.textBoxSpoolDir.Location = new System.Drawing.Point(97, 42);
+            this.textBoxSpoolDir.Name = "textBoxSpoolDir";
+            this.textBoxSpoolDir.Size = new System.Drawing.Size(346, 20);
+            this.textBoxSpoolDir.TabIndex = 7;
+            // 
+            // labelSpoolDir
+            // 
+            this.labelSpoolDir.AutoSize = true;
+            this.labelSpoolDir.Location = new System.Drawing.Point(9, 44);
+            this.labelSpoolDir.Name = "labelSpoolDir";
+            this.labelSpoolDir.Size = new System.Drawing.Size(82, 13);
+            this.labelSpoolDir.TabIndex = 6;
+            this.labelSpoolDir.Text = "Spool Directory:";
+            // 
+            // buttonSpoolDir
+            // 
+            this.buttonSpoolDir.Location = new System.Drawing.Point(449, 40);
+            this.buttonSpoolDir.Name = "buttonSpoolDir";
+            this.buttonSpoolDir.Size = new System.Drawing.Size(122, 23);
+            this.buttonSpoolDir.TabIndex = 5;
+            this.buttonSpoolDir.Text = "Change SpoolDir...";
+            this.buttonSpoolDir.UseVisualStyleBackColor = true;
+            // 
             // labelPort
             // 
             this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(7, 45);
+            this.labelPort.Location = new System.Drawing.Point(456, 19);
             this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(26, 13);
+            this.labelPort.Size = new System.Drawing.Size(29, 13);
             this.labelPort.TabIndex = 4;
-            this.labelPort.Text = "Port";
+            this.labelPort.Text = "Port:";
             // 
             // textBoxPort
             // 
-            this.textBoxPort.Location = new System.Drawing.Point(57, 42);
+            this.textBoxPort.Location = new System.Drawing.Point(491, 16);
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(80, 20);
             this.textBoxPort.TabIndex = 3;
@@ -307,7 +340,7 @@
             // 
             this.textBoxAETitle.Location = new System.Drawing.Point(57, 16);
             this.textBoxAETitle.Name = "textBoxAETitle";
-            this.textBoxAETitle.Size = new System.Drawing.Size(514, 20);
+            this.textBoxAETitle.Size = new System.Drawing.Size(386, 20);
             this.textBoxAETitle.TabIndex = 1;
             // 
             // buttonUpdateDICOM
@@ -431,7 +464,7 @@
             this.tabPageLog.Controls.Add(this.checkBoxInfoFilter);
             this.tabPageLog.Controls.Add(this.checkBoxDebugFilter);
             this.tabPageLog.Controls.Add(this.button1);
-            this.tabPageLog.Controls.Add(this.richTextBox1);
+            this.tabPageLog.Controls.Add(this.richTextBoxLog);
             this.tabPageLog.Controls.Add(this.textBoxLogfile);
             this.tabPageLog.Controls.Add(this.labelLog);
             this.tabPageLog.Controls.Add(this.buttonSetLogfile);
@@ -442,6 +475,56 @@
             this.tabPageLog.Text = "Logging";
             this.tabPageLog.UseVisualStyleBackColor = true;
             // 
+            // checkBoxErrorFilter
+            // 
+            this.checkBoxErrorFilter.AutoSize = true;
+            this.checkBoxErrorFilter.Location = new System.Drawing.Point(92, 36);
+            this.checkBoxErrorFilter.Name = "checkBoxErrorFilter";
+            this.checkBoxErrorFilter.Size = new System.Drawing.Size(65, 17);
+            this.checkBoxErrorFilter.TabIndex = 11;
+            this.checkBoxErrorFilter.Text = "ERROR";
+            this.checkBoxErrorFilter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFatalFilter
+            // 
+            this.checkBoxFatalFilter.AutoSize = true;
+            this.checkBoxFatalFilter.Location = new System.Drawing.Point(6, 36);
+            this.checkBoxFatalFilter.Name = "checkBoxFatalFilter";
+            this.checkBoxFatalFilter.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxFatalFilter.TabIndex = 10;
+            this.checkBoxFatalFilter.Text = "FATAL";
+            this.checkBoxFatalFilter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxWarningFilter
+            // 
+            this.checkBoxWarningFilter.AutoSize = true;
+            this.checkBoxWarningFilter.Location = new System.Drawing.Point(194, 36);
+            this.checkBoxWarningFilter.Name = "checkBoxWarningFilter";
+            this.checkBoxWarningFilter.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxWarningFilter.TabIndex = 9;
+            this.checkBoxWarningFilter.Text = "WARN";
+            this.checkBoxWarningFilter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxInfoFilter
+            // 
+            this.checkBoxInfoFilter.AutoSize = true;
+            this.checkBoxInfoFilter.Location = new System.Drawing.Point(294, 36);
+            this.checkBoxInfoFilter.Name = "checkBoxInfoFilter";
+            this.checkBoxInfoFilter.Size = new System.Drawing.Size(51, 17);
+            this.checkBoxInfoFilter.TabIndex = 8;
+            this.checkBoxInfoFilter.Text = "INFO";
+            this.checkBoxInfoFilter.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDebugFilter
+            // 
+            this.checkBoxDebugFilter.AutoSize = true;
+            this.checkBoxDebugFilter.Location = new System.Drawing.Point(381, 36);
+            this.checkBoxDebugFilter.Name = "checkBoxDebugFilter";
+            this.checkBoxDebugFilter.Size = new System.Drawing.Size(64, 17);
+            this.checkBoxDebugFilter.TabIndex = 7;
+            this.checkBoxDebugFilter.Text = "DEBUG";
+            this.checkBoxDebugFilter.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(467, 32);
@@ -451,14 +534,14 @@
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // richTextBoxLog
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(589, 314);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.richTextBoxLog.Enabled = false;
+            this.richTextBoxLog.Location = new System.Drawing.Point(0, 61);
+            this.richTextBoxLog.Name = "richTextBoxLog";
+            this.richTextBoxLog.Size = new System.Drawing.Size(589, 314);
+            this.richTextBoxLog.TabIndex = 5;
+            this.richTextBoxLog.Text = "";
             // 
             // textBoxLogfile
             // 
@@ -535,55 +618,11 @@
             this.aboutEnDPoINTToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutEnDPoINTToolStripMenuItem.Text = "&About EnDPoINT";
             // 
-            // checkBoxDebugFilter
+            // imageListPrint
             // 
-            this.checkBoxDebugFilter.AutoSize = true;
-            this.checkBoxDebugFilter.Location = new System.Drawing.Point(381, 36);
-            this.checkBoxDebugFilter.Name = "checkBoxDebugFilter";
-            this.checkBoxDebugFilter.Size = new System.Drawing.Size(64, 17);
-            this.checkBoxDebugFilter.TabIndex = 7;
-            this.checkBoxDebugFilter.Text = "DEBUG";
-            this.checkBoxDebugFilter.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxInfoFilter
-            // 
-            this.checkBoxInfoFilter.AutoSize = true;
-            this.checkBoxInfoFilter.Location = new System.Drawing.Point(294, 36);
-            this.checkBoxInfoFilter.Name = "checkBoxInfoFilter";
-            this.checkBoxInfoFilter.Size = new System.Drawing.Size(51, 17);
-            this.checkBoxInfoFilter.TabIndex = 8;
-            this.checkBoxInfoFilter.Text = "INFO";
-            this.checkBoxInfoFilter.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxWarningFilter
-            // 
-            this.checkBoxWarningFilter.AutoSize = true;
-            this.checkBoxWarningFilter.Location = new System.Drawing.Point(194, 36);
-            this.checkBoxWarningFilter.Name = "checkBoxWarningFilter";
-            this.checkBoxWarningFilter.Size = new System.Drawing.Size(60, 17);
-            this.checkBoxWarningFilter.TabIndex = 9;
-            this.checkBoxWarningFilter.Text = "WARN";
-            this.checkBoxWarningFilter.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFatalFilter
-            // 
-            this.checkBoxFatalFilter.AutoSize = true;
-            this.checkBoxFatalFilter.Location = new System.Drawing.Point(6, 36);
-            this.checkBoxFatalFilter.Name = "checkBoxFatalFilter";
-            this.checkBoxFatalFilter.Size = new System.Drawing.Size(59, 17);
-            this.checkBoxFatalFilter.TabIndex = 10;
-            this.checkBoxFatalFilter.Text = "FATAL";
-            this.checkBoxFatalFilter.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxErrorFilter
-            // 
-            this.checkBoxErrorFilter.AutoSize = true;
-            this.checkBoxErrorFilter.Location = new System.Drawing.Point(92, 36);
-            this.checkBoxErrorFilter.Name = "checkBoxErrorFilter";
-            this.checkBoxErrorFilter.Size = new System.Drawing.Size(65, 17);
-            this.checkBoxErrorFilter.TabIndex = 11;
-            this.checkBoxErrorFilter.Text = "ERROR";
-            this.checkBoxErrorFilter.UseVisualStyleBackColor = true;
+            this.imageListPrint.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageListPrint.ImageSize = new System.Drawing.Size(256, 256);
+            this.imageListPrint.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // frmMain
             // 
@@ -637,7 +676,7 @@
         private System.Windows.Forms.Label labelLog;
         private System.Windows.Forms.Button buttonSetLogfile;
         private System.Windows.Forms.OpenFileDialog openFileDialogLogfile;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxLog;
         private System.Windows.Forms.ComboBox comboBoxPrinters;
         private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -676,6 +715,10 @@
         private System.Windows.Forms.CheckBox checkBoxWarningFilter;
         private System.Windows.Forms.CheckBox checkBoxInfoFilter;
         private System.Windows.Forms.CheckBox checkBoxDebugFilter;
+        private System.Windows.Forms.TextBox textBoxSpoolDir;
+        private System.Windows.Forms.Label labelSpoolDir;
+        private System.Windows.Forms.Button buttonSpoolDir;
+        public System.Windows.Forms.ImageList imageListPrint;
 
     }
 }

@@ -43,12 +43,18 @@ namespace EnDPoINT
             //setup globals
             this._globalStatus = false;
             this._serverSettings = new Settings();
+            _serverSettings.spoolDir = Application.StartupPath.ToString() + "\\spool\\";
 
             //update installed printers
             foreach (string s in PrinterSettings.InstalledPrinters)
             {
                 this.comboBoxPrinters.Items.Add(s);
             }
+            this.textBoxAETitle.Text = this._serverSettings.AETitle;
+            this.textBoxPort.Text = this._serverSettings.serverPort.ToString();
+            this.textBoxSpoolDir.Text = this._serverSettings.spoolDir;
+
+            this.updateStatus();
             this.updateVisuals();
 
             this.toolStripStatusLabelServer.Text = "Server is ready to start.";
@@ -76,7 +82,7 @@ namespace EnDPoINT
         /// <summary>
         /// Update all visuals to current settings
         /// </summary>
-        private void updateVisuals()
+        private void updateStatus()
         {
             //general
             this.Icon = Properties.Resources.printer;
@@ -88,7 +94,7 @@ namespace EnDPoINT
                     this.pictureBoxStatus.Image = Properties.Resources.nework_on;
                     this.buttonServer.Text = "Stop EnDPoINT Server";
                     this.toolStripStatusLabelServer.Text = "Server started...";
-                    dcmServer.StoragePath = ".\\";
+                    dcmServer.StoragePath = this._serverSettings.spoolDir;
                     dcmServer.StartListening(this._serverSettings.AETitle, this._serverSettings.serverIP ,this._serverSettings.serverPort);
                     log.Info("DICOM server started.");
                 }
@@ -100,15 +106,11 @@ namespace EnDPoINT
                     dcmServer.StopListening(this._serverSettings.serverPort);
                     log.Info("DICOM server stopped.");
                 }
+        }
 
-            //settings
-            this.textBoxAETitle.Text = this._serverSettings.AETitle;
-            this.textBoxPort.Text = this._serverSettings.serverPort.ToString();
-            this.labelShowIP.Text = this._serverSettings.serverIP.ToString();
-            this.labelShowPort.Text = this._serverSettings.serverPort.ToString();
-            this.labelShowAETitle.Text = this._serverSettings.AETitle;
+        private void updateVisuals()
+        {
             this.labelShowPrinter.Text = this._serverSettings.Printer;
-            this.checkBoxDICOMHeader.Checked = this._serverSettings.PrintHeader;
             if (this._serverSettings.PrintHeader)
             {
                 this.labelShowPrintHeaders.Text = "Yes";
@@ -117,8 +119,12 @@ namespace EnDPoINT
             {
                 this.labelShowPrintHeaders.Text = "No";
             }
+            this.labelShowIP.Text = this._serverSettings.serverIP.ToString();
+            this.labelShowPort.Text = this._serverSettings.serverPort.ToString();
+            this.labelShowAETitle.Text = this._serverSettings.AETitle;
         }
 
+        # region UIAction
         /// <summary>
         /// Activate/Deactivate server
         /// </summary>
@@ -127,30 +133,33 @@ namespace EnDPoINT
         private void buttonServer_Click(object sender, EventArgs e)
         {
             switchStatus();
-            updateVisuals();
+            updateStatus();
         }
 
-        # region UIAction
+        
         private void comboBoxPrinters_SelectedIndexChanged(object sender, EventArgs e)
         {
             this._serverSettings.Printer = this.comboBoxPrinters.SelectedItem.ToString();
-            log.Info("Printer selected: " + this._serverSettings.Printer);
             this.toolStripStatusLabelServer.Text = "Printer settings updated. Restart server to apply.";
+            this.updateVisuals();
+            log.Info("Printer selected: " + this._serverSettings.Printer);
         }
 
         private void checkBoxDICOMHeader_CheckedChanged(object sender, EventArgs e)
         {
             this._serverSettings.PrintHeader = this.checkBoxDICOMHeader.Checked;
-            log.Info("Changed the print DICOM header setting.");
             this.toolStripStatusLabelServer.Text = "DICOM print header settings updated. Restart server to apply.";
+            this.updateVisuals();
+            log.Info("Changed the print DICOM header setting."); 
         }
 
      private void buttonUpdateDICOM_Click(object sender, EventArgs e)
         {
-            log.Info("DICOM config updated.");
-            this.toolStripStatusLabelServer.Text = "DICOM settings updated. Restart server to apply.";
             this._serverSettings.AETitle = this.textBoxAETitle.Text;
             this._serverSettings.serverPort = Convert.ToInt32(this.textBoxPort.Text);
+            this.toolStripStatusLabelServer.Text = "DICOM settings updated. Restart server to apply.";
+            this.updateVisuals();
+            log.Info("DICOM config updated.");
         }
         #endregion
 

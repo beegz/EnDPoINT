@@ -19,12 +19,19 @@ namespace EnDPoINT
         private string _AETitle;
         private string _printer;
         private bool _printHeader;
+        private string _spoolDir;
         #endregion
         #region Getters and Setters
         public IPAddress serverIP
         {
             get { return _serverIP; }
             set { this._serverIP = value; }
+        }
+
+        public string spoolDir
+        {
+            get { return this._spoolDir; }
+            set { this._spoolDir = value; }
         }
 
         public int serverPort
@@ -63,6 +70,7 @@ namespace EnDPoINT
             this._AETitle = "EnDPoINT";
             this._printer = "None";
             this._printHeader = false;
+            this.spoolDir = ".\\spool\\";
         }
         #endregion
 
